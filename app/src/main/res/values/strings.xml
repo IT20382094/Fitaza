@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Fitaza Fitness App</string>
+    <string name="under_weight_18_5"><![CDATA[Under Weight < 18.5]]></string>
+</resources>

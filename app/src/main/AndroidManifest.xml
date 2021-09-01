@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fitazafitnessapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FitazaFitnessApp">
+        <activity
+            android:name=".SetWaterTargetActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewTimeTableActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SetTimeTableActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MealPlanResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MealPlanCalculatorActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MealDailyPlanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MealPlanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WorkoutBurntActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WorkoutFollowStepsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WorkoutStepsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WorkoutCaloriesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WorkoutFocusActivity"
+            android:exported="true" />
+        <activity
+            android:name=".YourBMIActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MyProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
