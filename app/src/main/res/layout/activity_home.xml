@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:text="Welcome To Fitaza"
             android:textColor="@color/white"
-            android:textSize="35dp" />
+            android:textSize="45dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -45,7 +46,8 @@
             android:layout_height="wrap_content"
             android:text="FIT YOUR LIFE WITH FITAZA"
             android:textColor="@color/white"
-            android:textSize="15dp"/>
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -53,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="250dp">
 
         <Button
             android:id="@+id/btn_start"
@@ -61,7 +63,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/teal_700"
             android:text="Get start"
-            android:textSize="18dp"/>
+            android:textSize="25dp" />
 
     </LinearLayout>
 
