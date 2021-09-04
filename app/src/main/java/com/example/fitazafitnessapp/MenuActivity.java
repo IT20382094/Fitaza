@@ -20,8 +20,8 @@ public class MenuActivity extends AppCompatActivity {
         btnMyProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, MyProfileActivity.class);
-                startActivity(intent);
+                    Intent intent = new Intent(MenuActivity.this, MyProfileActivity.class);
+                    startActivity(intent);
             }
         });
 

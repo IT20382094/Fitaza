@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true"
-    android:background="@drawable/back">
+    android:background="@drawable/meal">
 
     <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -23,8 +23,10 @@
 
             <DatePicker
                 android:layout_width="wrap_content"
+                android:background="@color/white"
                 android:layout_height="wrap_content"
-                android:background="@drawable/input_border" />
+
+                />
 
         </LinearLayout>
 
@@ -66,21 +68,24 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="All grain cereal (125)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Milk (50)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Banana (90)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -98,14 +103,16 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Cucumber (30)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Avocado dip (50)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -158,14 +165,16 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Chicken and vegetable soup (300)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Bread (100)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -183,14 +192,16 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Apple (75)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Peanut Butter (75)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -243,14 +254,16 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="All grain cereal (125)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:text="Grilled Chicken (200)"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -258,7 +271,8 @@
                 android:paddingLeft="10dp"
                 android:text="Brussel Sprouts (100)"
                 android:layout_marginBottom="10dp"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
