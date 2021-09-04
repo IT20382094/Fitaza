@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_meal_daily_plan.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_meal_plan.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_meal_plan_calculator.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_meal_plan_result.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_menu.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_my_profile.xml" value="0.264" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_profile_view.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_set_time_table.xml" value="0.264" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_set_water_target.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_view_time_table.xml" value="0.259375" />
+        <entry key="..\:/Fitaza/app/src/main/res/layout/activity_your_bmiactivity.xml" value="0.259375" />
         <entry key="..\:/FitazaFitnessApp2/app/src/main/res/drawable/bmi_border.xml" value="0.2703125" />
         <entry key="..\:/FitazaFitnessApp2/app/src/main/res/drawable/input_border.xml" value="0.22592592592592592" />
         <entry key="..\:/FitazaFitnessApp2/app/src/main/res/layout/activity_home.xml" value="0.2" />

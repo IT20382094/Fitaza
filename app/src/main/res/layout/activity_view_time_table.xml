@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@drawable/timetable">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -23,7 +30,9 @@
             android:textAlignment="center"
             android:paddingBottom="10dp"
             android:text="Set My Targets"
-            android:textSize="28dp"
+            android:backgroundTint="#80DAD1"
+            android:textColor="@color/black"
+            android:textSize="35dp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -47,34 +56,38 @@
             android:paddingBottom="10dp"
             android:text="Monday"
             android:textColor="@color/black"
-            android:textSize="21dp"
+            android:textSize="24dp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Arm Exercise"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:text="From 6:00 AM to 6:30 AM"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Thigh Exercise"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:text="From 6:30 AM to 7:00 AM"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -85,7 +98,7 @@
             android:backgroundTint="@color/teal_700"
             android:text="Delete"
             android:layout_marginBottom="10dp"
-            android:textSize="20dp"/>
+            android:textSize="23dp"/>
 
     </LinearLayout>
 
@@ -108,34 +121,38 @@
             android:paddingBottom="10dp"
             android:text="Tuesday"
             android:textColor="@color/black"
-            android:textSize="21dp"
+            android:textSize="24dp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Leg Exercise"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:text="From 6:00 AM to 6:30 AM"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chest Exercise"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:text="From 6:30 AM to 7:00 AM"
-            android:textSize="18dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -146,7 +163,7 @@
             android:backgroundTint="@color/teal_700"
             android:text="Delete"
             android:layout_marginBottom="10dp"
-            android:textSize="20dp"/>
+            android:textSize="23dp"/>
 
     </LinearLayout>
 
@@ -162,26 +179,30 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
             android:backgroundTint="@color/teal_700"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="15dp"
             android:text="Add"
-            android:textSize="22dp"/>
+            android:textSize="22dp"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/btn_set_target"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
             android:backgroundTint="@color/teal_700"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="15dp"
             android:text="Set water target"
-            android:textSize="22dp"/>
+            android:textSize="22dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>
