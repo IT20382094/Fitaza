@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitazaFitnessApp">
         <activity
+            android:name=".ProfileViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".SetWaterTargetActivity"
             android:exported="true" />
         <activity
