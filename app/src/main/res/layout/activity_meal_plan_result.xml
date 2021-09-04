@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MealPlanResultActivity">
+    tools:context=".MealPlanResultActivity"
+    android:background="@drawable/back">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,18 +14,20 @@
         android:paddingRight="10dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="50dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAlignment="center"
+            android:background="@drawable/input_border"
+            android:backgroundTint="#80DAD1"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:textStyle="bold"
-            android:background="@drawable/input_border"
             android:text="Result"
-            android:textSize="28dp"/>
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -36,7 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/input_border"
         android:orientation="vertical"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="100dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -45,7 +48,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="BMR = XXXX"
-            android:textSize="28dp"/>
+            android:textSize="30dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -60,22 +63,39 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="30dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:weightSum="2"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_go_to_home_back"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Back"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
 
         <Button
             android:id="@+id/btn_go_to_home"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/teal_700"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/teal_700"
             android:text="Go to home"
-            android:textSize="22dp" />
+            android:textStyle="bold"
+            android:textSize="18dp"/>
 
     </LinearLayout>
 
