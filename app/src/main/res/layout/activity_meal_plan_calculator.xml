@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MealPlanCalculatorActivity">
+    tools:context=".MealPlanCalculatorActivity"
+    android:background="@drawable/back">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
 
@@ -24,7 +25,9 @@
             android:paddingBottom="10dp"
             android:text="Calorie Calculator"
             android:textSize="28dp"
-            android:textStyle="bold" />
+            android:backgroundTint="#80DAD1"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
@@ -32,18 +35,19 @@
         android:layout_width="match_parent"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         android:layout_height="wrap_content"
         android:weightSum="2">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_weight="1"
-            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:text="Age"
             android:textColor="@color/black"
-            android:text="Age"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <EditText
             android:layout_width="0dp"
@@ -52,12 +56,13 @@
             android:background="@drawable/input_border"
             android:ems="10"
             android:hint="ages 15 - 18"
-            android:textAlignment="center"
             android:paddingLeft="8dp"
             android:paddingTop="4dp"
             android:paddingRight="5dp"
             android:paddingBottom="8dp"
-            android:textSize="15dp" />
+            android:textAlignment="center"
+            android:textSize="16dp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 
@@ -74,7 +79,8 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:layout_weight="1"
-            android:textSize="16dp"
+            android:textSize="21dp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:text="Gender"/>
 
@@ -90,13 +96,15 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="Male"
+                android:textSize="18dp"
                 android:checked="true" />
 
             <RadioButton
                 android:id="@+id/radioFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female" />
+                android:text="Female"
+                android:textSize="18dp"/>
 
         </RadioGroup>
 
@@ -113,11 +121,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_weight="1"
-            android:textSize="16dp"
-            android:textColor="@color/black"
-            android:text="Height"/>
+            android:gravity="center_vertical"
+            android:text="Height"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <EditText
             android:layout_width="0dp"
@@ -126,12 +135,13 @@
             android:background="@drawable/input_border"
             android:ems="10"
             android:hint="cm"
-            android:textAlignment="textEnd"
-            android:paddingEnd="8dp"
             android:paddingTop="4dp"
+            android:paddingEnd="8dp"
             android:paddingRight="5dp"
             android:paddingBottom="8dp"
-            android:textSize="15dp" />
+            android:textAlignment="textEnd"
+            android:textSize="16dp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 
@@ -148,7 +158,8 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:layout_weight="1"
-            android:textSize="16dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:text="Weight"/>
 
@@ -159,35 +170,53 @@
             android:background="@drawable/input_border"
             android:ems="10"
             android:hint="kg"
-            android:textAlignment="textEnd"
-            android:paddingEnd="8dp"
             android:paddingTop="4dp"
+            android:paddingEnd="8dp"
             android:paddingRight="5dp"
             android:paddingBottom="8dp"
-            android:textSize="15dp" />
+            android:textAlignment="textEnd"
+            android:textSize="16dp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp">
+        android:weightSum="2"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_calculate_back"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Back"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
 
         <Button
             android:id="@+id/btn_calculate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
+            android:layout_marginLeft="10dp"
             android:backgroundTint="@color/teal_700"
             android:text="Calculate"
-            android:textSize="22dp"/>
+            android:textStyle="bold"
+            android:textSize="18dp"/>
 
     </LinearLayout>
+
 
 </LinearLayout>
