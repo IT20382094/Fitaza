@@ -79,13 +79,13 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/img" />
+                android:src="@drawable/belly1" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/img" />
+                android:src="@drawable/belly2" />
 
         </LinearLayout>
 
@@ -131,13 +131,13 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/img" />
+                android:src="@drawable/belly3" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/img" />
+                android:src="@drawable/belly4" />
 
         </LinearLayout>
 
