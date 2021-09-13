@@ -321,7 +321,7 @@
             android:layout_marginTop="20dp">
 
             <Button
-                android:id="@+id/btn_update_workout"
+                android:id="@+id/btn_update_meal"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -334,7 +334,7 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:id="@+id/btn_delete_workout"
+                android:id="@+id/btn_delete_meal"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
