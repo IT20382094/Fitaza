@@ -25,5 +25,14 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             }
         });
 
+        btnBurnt = findViewById(R.id.btn_delete_workout);
+        btnBurnt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutStepsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
