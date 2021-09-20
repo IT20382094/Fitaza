@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 public class MealDailyPlanActivity extends AppCompatActivity {
 
     private Button btnCalorieCal;
+    private Button btnDelete;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +35,6 @@ public class MealDailyPlanActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

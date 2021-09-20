@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitazaFitnessApp">
         <activity
+            android:name=".activity_shoulder_steps"
+            android:exported="true" />
+        <activity
+            android:name=".activity_legs_steps"
+            android:exported="true" />
+        <activity
+            android:name=".activity_chest_steps"
+            android:exported="true" />
+        <activity
+            android:name=".activity_butt_steps"
+            android:exported="true" />
+        <activity
+            android:name=".activity_belly_steps"
+            android:exported="true" />
+        <activity
             android:name=".ProfileViewActivity"
             android:exported="true" />
         <activity
@@ -35,9 +50,6 @@
             android:exported="true" />
         <activity
             android:name=".WorkoutBurntActivity"
-            android:exported="true" />
-        <activity
-            android:name=".WorkoutFollowStepsActivity"
             android:exported="true" />
         <activity
             android:name=".WorkoutStepsActivity"

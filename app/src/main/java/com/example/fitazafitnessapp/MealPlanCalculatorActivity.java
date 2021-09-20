@@ -24,5 +24,14 @@ public class MealPlanCalculatorActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnCalculate = findViewById(R.id.btn_calculate_back);
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MealPlanCalculatorActivity.this, MealDailyPlanActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

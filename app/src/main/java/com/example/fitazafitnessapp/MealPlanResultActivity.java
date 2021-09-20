@@ -24,5 +24,16 @@ public class MealPlanResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        btnGoToHome = findViewById(R.id.btn_go_to_home_back);
+        btnGoToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MealPlanResultActivity.this, MealPlanCalculatorActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

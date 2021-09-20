@@ -7,20 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class WorkoutFollowStepsActivity extends AppCompatActivity {
-
-    private Button btnStart;
+public class activity_shoulder_steps extends AppCompatActivity {
+    private Button btnGoToHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workout_follow_steps);
+        setContentView(R.layout.activity_shoulder_steps);
 
-        btnStart = findViewById(R.id.btn_start);
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        btnGoToHome = findViewById(R.id.btn_start);
+        btnGoToHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WorkoutFollowStepsActivity.this, WorkoutStepsActivity.class);
+                Intent intent = new Intent(activity_shoulder_steps.this, WorkoutStepsActivity.class);
                 startActivity(intent);
             }
         });
