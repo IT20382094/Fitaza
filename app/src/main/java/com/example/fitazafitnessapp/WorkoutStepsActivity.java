@@ -20,7 +20,7 @@ public class WorkoutStepsActivity extends AppCompatActivity {
         btnSeeSteps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutFollowStepsActivity.class);
+                Intent intent = new Intent(WorkoutStepsActivity.this, activity_belly_steps.class);
                 startActivity(intent);
             }
         });

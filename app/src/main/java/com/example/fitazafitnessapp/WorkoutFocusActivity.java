@@ -21,7 +21,7 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnBelly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WorkoutFocusActivity.this, WorkoutStepsActivity.class);
+                Intent intent = new Intent(WorkoutFocusActivity.this, activity_belly_steps.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,34 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WorkoutFocusActivity.this, WorkoutStepsActivity.class);
+                Intent intent = new Intent(WorkoutFocusActivity.this, activity_butt_steps.class);
+                startActivity(intent);
+            }
+        });
+
+        btnButt = findViewById(R.id.btn_chest);
+        btnButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WorkoutFocusActivity.this, activity_chest_steps.class);
+                startActivity(intent);
+            }
+        });
+
+        btnButt = findViewById(R.id.btn_legs);
+        btnButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WorkoutFocusActivity.this, activity_legs_steps.class);
+                startActivity(intent);
+            }
+        });
+
+        btnButt = findViewById(R.id.btn_shoulder);
+        btnButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WorkoutFocusActivity.this, activity_shoulder_steps.class);
                 startActivity(intent);
             }
         });

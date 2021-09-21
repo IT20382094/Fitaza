@@ -61,7 +61,8 @@
             android:paddingLeft="5dp"
             android:paddingTop="4dp"
             android:paddingRight="5dp"
-            android:paddingBottom="8dp"/>
+            android:paddingBottom="8dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </LinearLayout>
 
@@ -90,7 +91,8 @@
             android:paddingLeft="5dp"
             android:paddingTop="4dp"
             android:paddingRight="5dp"
-            android:paddingBottom="8dp"/>
+            android:paddingBottom="8dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </LinearLayout>
 
@@ -116,7 +118,8 @@
             android:layout_weight="1"
             android:background="@drawable/input_border"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp"/>
+            android:paddingRight="5dp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
@@ -145,7 +148,8 @@
             android:paddingLeft="5dp"
             android:paddingTop="4dp"
             android:paddingRight="5dp"
-            android:paddingBottom="8dp"/>
+            android:paddingBottom="8dp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
@@ -171,7 +175,8 @@
             android:layout_weight="1"
             android:background="@drawable/input_border"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp"/>
+            android:paddingRight="5dp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
