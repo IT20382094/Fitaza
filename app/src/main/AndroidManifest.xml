@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitazaFitnessApp">
         <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>/>
+        </activity>
+
+        <activity
             android:name=".activity_shoulder_steps"
             android:exported="true" />
         <activity
@@ -72,11 +83,11 @@
         <activity
             android:name=".HomeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
