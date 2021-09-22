@@ -9,15 +9,15 @@ import android.widget.Button;
 
 public class MealPlanActivity extends AppCompatActivity {
 
-    private Button btnDailyPlan;
+    private Button btnMealPlan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_plan);
 
-        btnDailyPlan = findViewById(R.id.btn_daily_plan);
-        btnDailyPlan.setOnClickListener(new View.OnClickListener() {
+        btnMealPlan = findViewById(R.id.btn_add_daily_plan);
+        btnMealPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MealPlanActivity.this, MealDailyPlanActivity.class);
@@ -25,8 +25,8 @@ public class MealPlanActivity extends AppCompatActivity {
             }
         });
 
-        btnDailyPlan = findViewById(R.id.btn_daily_plan_back);
-        btnDailyPlan.setOnClickListener(new View.OnClickListener() {
+        btnMealPlan = findViewById(R.id.btn_meal_plan_back);
+        btnMealPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MealPlanActivity.this, MenuActivity.class);
