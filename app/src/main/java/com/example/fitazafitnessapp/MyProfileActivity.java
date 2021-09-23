@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MyProfileActivity extends AppCompatActivity {
 
     private Button btnComputeBmi;
+    private Button btnComputeBmiBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,8 @@ public class MyProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_profile);
 
         btnComputeBmi = findViewById(R.id.btn_compute_bmi);
+        btnComputeBmiBack =findViewById(R.id.btn_compute_bmi_back);
+
         btnComputeBmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,5 +27,16 @@ public class MyProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnComputeBmiBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyProfileActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }

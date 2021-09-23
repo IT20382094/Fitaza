@@ -47,5 +47,16 @@ public class SetTimeTableActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnSet = findViewById(R.id.btn_set_back);
+        btnSet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SetTimeTableActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
     }
 }
