@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "372886633872",
+    "project_id": "fitaza-fitness-96b2e",
+    "storage_bucket": "fitaza-fitness-96b2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372886633872:android:bc437db643eaffffbb8715",
+        "android_client_info": {
+          "package_name": "com.example.fitazafitnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372886633872-abgom90r5390f89jd2rt1p9fkq2rpfd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-4dxySlNDb6b4ac6fz5fFcX-uj09rKQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372886633872-abgom90r5390f89jd2rt1p9fkq2rpfd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
