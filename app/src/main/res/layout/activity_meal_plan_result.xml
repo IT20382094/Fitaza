@@ -47,8 +47,10 @@
             android:textAlignment="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="BMR = XXXX"
-            android:textSize="30dp"/>
+            android:text="BMR = 1380"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -57,7 +59,8 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="(Calories / Day)"
-            android:textSize="28dp"/>
+            android:textSize="28dp"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
