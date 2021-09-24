@@ -14,4 +14,8 @@ public class FirebaseDB {
         return FirebaseDatabase.getInstance().getReference("Fitaza");
     }
 
+    public static DatabaseReference getFirebaseDB() {
+        return FirebaseDatabase.getInstance().getReference("Fitaza").child("sewmi@gmailcom");
+    }
+
 }
