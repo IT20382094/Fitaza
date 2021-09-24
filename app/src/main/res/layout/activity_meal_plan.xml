@@ -52,11 +52,12 @@
                 android:textColor="@color/black"/>
 
             <CheckBox
+                android:id="@+id/breakfast_check1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:checked="true"
                 android:buttonTint="@color/colorPrimary"
+                android:checked="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,6 +79,7 @@
                 android:text="Menu 2 : 1500 Cal Plan"/>
 
             <CheckBox
+                android:id="@+id/breakfast_check2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -102,6 +104,7 @@
                 android:text="Menu 3 : 2000 Cal Plan"/>
 
             <CheckBox
+                android:id="@+id/breakfast_check3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -150,6 +153,7 @@
                 android:text="Menu 1 : 1200 Cal Plan"/>
 
             <CheckBox
+                android:id="@+id/lunch_check1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -175,6 +179,7 @@
                 android:text="Menu 2 : 1500 Cal Plan"/>
 
             <CheckBox
+                android:id="@+id/lunch_check2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -199,6 +204,7 @@
                 android:text="Menu 3 : 2000 Cal Plan"/>
 
             <CheckBox
+                android:id="@+id/lunch_check3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -246,6 +252,7 @@
                 android:textColor="@color/black" />
 
             <CheckBox
+                android:id="@+id/dinner_check1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -271,6 +278,7 @@
                 android:text="Menu 2 : 1500 Cal Plan"/>
 
             <CheckBox
+                android:id="@+id/dinner_check2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -296,6 +304,7 @@
                 android:textSize="20dp" />
 
             <CheckBox
+                android:id="@+id/dinner_check3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
