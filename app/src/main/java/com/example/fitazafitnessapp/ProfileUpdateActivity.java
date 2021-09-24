@@ -39,46 +39,16 @@ public class ProfileUpdateActivity extends AppCompatActivity {
 
 
         Intent intent= getIntent();
+
         pAge =intent.getStringExtra("age");
         pGender=intent.getStringExtra("gender");
         pWeight=intent.getStringExtra("weight");
         pHeight =intent.getStringExtra("height");
 
-
         age.setText(pAge);
         gender.setText(pGender);
         weight.setText(pWeight);
         height.setText(pHeight);
-
-//        dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
-//        dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.hasChild("Profile")){
-//                    MyProfile myProfile =new MyProfile();
-//                    myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
-//                    myProfile.setGender(gender.getText().toString().trim());
-//                    myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
-//                    myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
-//
-//
-//                    dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
-//                    dbProfile.setValue(myProfile);
-//                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
-//
-//
-//                }
-//                else
-//                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-
-
 
         btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override

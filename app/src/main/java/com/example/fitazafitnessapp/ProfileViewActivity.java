@@ -100,8 +100,8 @@ public class ProfileViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 deleteProfile();
                 clearControls();
-//                Intent intent = new Intent(ProfileViewActivity.this, MyProfileActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(ProfileViewActivity.this, MyProfileActivity.class);
+                startActivity(intent);
             }
         });
 
