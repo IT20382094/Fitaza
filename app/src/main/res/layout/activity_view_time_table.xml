@@ -198,7 +198,7 @@
             android:paddingTop="15dp"
             android:paddingRight="20dp"
             android:paddingBottom="15dp"
-            android:text="Set water target"
+            android:text="Set target"
             android:textSize="22dp"
             android:textStyle="bold"/>
 

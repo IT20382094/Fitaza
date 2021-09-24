@@ -4,34 +4,34 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Workout {
-    private LocalDate workoutDay;
-    private LocalTime workoutStartTime;
-    private LocalTime workoutTargetTime;
+    private String workoutDay;
+    private String workoutStartTime;
+    private String workoutTargetTime;
 
     public Workout() {
     }
 
-    public LocalDate getWorkoutDay() {
+    public String getWorkoutDay() {
         return workoutDay;
     }
 
-    public void setWorkoutDay(LocalDate workoutDay) {
+    public void setWorkoutDay(String workoutDay) {
         this.workoutDay = workoutDay;
     }
 
-    public LocalTime getWorkoutStartTime() {
+    public String getWorkoutStartTime() {
         return workoutStartTime;
     }
 
-    public void setWorkoutStartTime(LocalTime workoutStartTime) {
+    public void setWorkoutStartTime(String workoutStartTime) {
         this.workoutStartTime = workoutStartTime;
     }
 
-    public LocalTime getWorkoutTargetTime() {
+    public String getWorkoutTargetTime() {
         return workoutTargetTime;
     }
 
-    public void setWorkoutTargetTime(LocalTime workoutTargetTime) {
+    public void setWorkoutTargetTime(String workoutTargetTime) {
         this.workoutTargetTime = workoutTargetTime;
     }
 }
