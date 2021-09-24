@@ -26,10 +26,6 @@ public class YourBMIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_bmiactivity);
 
-        //TextView t = (TextView) findViewById(R.id.txt_your_bmi);
-        //t.setText(Html.fromHtml("YOUR BMI (kg/" + "m<sup>2</sup>" + ")"));
-
-
         weight = findViewById(R.id.weight);
         height = findViewById(R.id.height);
         btn_bmi_value = findViewById(R.id.btn_bmi_value);
@@ -39,12 +35,6 @@ public class YourBMIActivity extends AppCompatActivity {
         back = findViewById(R.id.btn_go_to_home_back);
 
         Intent intent = getIntent();
-
-//        pWeight= Double.parseDouble(intent.getStringExtra("weight"));
-//        pHeight =Double.parseDouble(intent.getStringExtra("height"));
-
-        // bmi_value.setText((int) calculateBmi(pWeight,pHeight));
-
 
         pWeight = intent.getStringExtra("weight");
         pHeight = intent.getStringExtra("height");
@@ -83,7 +73,7 @@ public class YourBMIActivity extends AppCompatActivity {
                 } else {
                     result = "Obese";
                 }
-                view_result.setText("You are " + result);
+                view_result.setText("You are in " + result);
 
             }
         });
@@ -95,7 +85,7 @@ public class YourBMIActivity extends AppCompatActivity {
         return ans;
     }
 
-//    public void calculateBmi(View view){
-//        bmi_value.setText((int) (pWt*10000/pHt*pHt));
-//    }
+
 }
+
+
