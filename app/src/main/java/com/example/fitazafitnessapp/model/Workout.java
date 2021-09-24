@@ -7,6 +7,7 @@ public class Workout {
     private String workoutDay;
     private String workoutStartTime;
     private String workoutTargetTime;
+    private String workoutEndingTime;
 
     public Workout() {
     }
@@ -33,5 +34,13 @@ public class Workout {
 
     public void setWorkoutTargetTime(String workoutTargetTime) {
         this.workoutTargetTime = workoutTargetTime;
+    }
+
+    public String getWorkoutEndingTime() {
+        return workoutEndingTime;
+    }
+
+    public void setWorkoutEndingTime(String workoutEndingTime) {
+        this.workoutEndingTime = workoutEndingTime;
     }
 }

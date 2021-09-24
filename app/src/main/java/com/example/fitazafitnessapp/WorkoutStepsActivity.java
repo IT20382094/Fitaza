@@ -1,10 +1,8 @@
 package com.example.fitazafitnessapp;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,42 +12,9 @@ import android.widget.Toast;
 
 import com.example.fitazafitnessapp.db.FirebaseDB;
 import com.example.fitazafitnessapp.model.Workout;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
-
 public class WorkoutStepsActivity extends AppCompatActivity {
-
-//    private Button btnSeeSteps,btnNext;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_workout_steps);
-//
-//        btnSeeSteps = findViewById(R.id.btn_see_steps);
-//        btnSeeSteps.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(WorkoutStepsActivity.this, activity_belly_steps.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        btnNext = findViewById(R.id.btn_next);
-//        btnNext.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutCaloriesActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//    }
-
-
 
     EditText date, start_time, target_time;
     private Button btnSeeSteps,btnNext;
@@ -72,6 +37,15 @@ public class WorkoutStepsActivity extends AppCompatActivity {
 
                 createData();
                 Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutCaloriesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSeeSteps = findViewById(R.id.btn_see_steps);
+        btnSeeSteps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WorkoutStepsActivity.this, activity_belly_steps.class);
                 startActivity(intent);
             }
         });
