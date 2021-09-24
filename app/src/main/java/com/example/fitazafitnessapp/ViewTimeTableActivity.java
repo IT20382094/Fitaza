@@ -16,6 +16,15 @@ public class ViewTimeTableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_time_table);
 
+        btnSetTarget = findViewById(R.id.btn_add_target);
+        btnSetTarget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewTimeTableActivity.this, SetTimeTableActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btnSetTarget = findViewById(R.id.btn_set_target);
         btnSetTarget.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +32,8 @@ public class ViewTimeTableActivity extends AppCompatActivity {
                 Intent intent = new Intent(ViewTimeTableActivity.this, SetWaterTargetActivity.class);
                 startActivity(intent);
             }
+
         });
+
     }
 }

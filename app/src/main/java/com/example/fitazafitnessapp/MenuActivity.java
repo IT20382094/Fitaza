@@ -58,7 +58,7 @@ public class MenuActivity extends AppCompatActivity {
         btnTimeTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, SetTimeTableActivity.class);
+                Intent intent = new Intent(MenuActivity.this, ViewTimeTableActivity.class);
                 startActivity(intent);
             }
         });
