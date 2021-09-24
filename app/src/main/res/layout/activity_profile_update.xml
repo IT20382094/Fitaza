@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/input_border"
                 android:backgroundTint="#80DAD1"
-                android:paddingLeft="100dp"
+                android:paddingLeft="55dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Update Profile"

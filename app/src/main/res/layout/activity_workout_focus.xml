@@ -45,7 +45,7 @@
                 android:backgroundTint="@color/teal_700"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
-                android:text="Belly"
+                android:text="ABS"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 

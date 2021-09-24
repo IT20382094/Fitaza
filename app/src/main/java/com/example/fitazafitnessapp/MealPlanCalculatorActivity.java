@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MealPlanCalculatorActivity extends AppCompatActivity {
 
-    private Button btnCalculate;
+    private Button btnCalculate,btnBack;
     private TextView age;
     private TextView weight;
     private TextView height;
@@ -27,30 +27,29 @@ public class MealPlanCalculatorActivity extends AppCompatActivity {
     private RadioButton male;
     private RadioButton female;
     DatabaseReference dbRef;
-
+    static double BMR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_plan_calculator);
 
-        age =findViewById(R.id.et_age);
-        gender=findViewById(R.id.et_gender);
-        weight=findViewById(R.id.et_weight);
-        height=findViewById(R.id.et_height);
+        age = findViewById(R.id.et_age);
+        gender = findViewById(R.id.et_gender);
+        weight = findViewById(R.id.et_weight);
+        height = findViewById(R.id.et_height);
 
 
         dbRef = FirebaseDB.getFirebaseDB().child("Profile");
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren()){
+                if (snapshot.hasChildren()) {
                     age.setText(snapshot.child("age").getValue().toString());
                     gender.setText(snapshot.child("gender").getValue().toString());
                     weight.setText(snapshot.child("weight").getValue().toString());
                     height.setText(snapshot.child("height").getValue().toString());
-                }
-                else
+                } else
                     Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
 
             }
@@ -62,19 +61,18 @@ public class MealPlanCalculatorActivity extends AppCompatActivity {
         });
 
 
-
-
         btnCalculate = findViewById(R.id.btn_calculate);
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                bMRCalculation(Double.parseDouble(weight.getText().toString()), Double.parseDouble(height.getText().toString()), gender.getText().toString(), Integer.parseInt(age.getText().toString()));
                 Intent intent = new Intent(MealPlanCalculatorActivity.this, MealPlanResultActivity.class);
                 startActivity(intent);
             }
         });
 
-        btnCalculate = findViewById(R.id.btn_calculate_back);
-        btnCalculate.setOnClickListener(new View.OnClickListener() {
+        btnBack = findViewById(R.id.btn_calculate_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MealPlanCalculatorActivity.this, MealDailyPlanActivity.class);
@@ -85,18 +83,16 @@ public class MealPlanCalculatorActivity extends AppCompatActivity {
 
     }
 
-    public double BMRCalculation(double weight, double height, String gender, int age){
-        double BMR;
-        if (gender == "Female"){
-            BMR = 10*weight + 6.25*height - 5*age - 161;
+    public double bMRCalculation(double weight, double height, String gender, int age) {
+        if (gender.equals("Female")) {
+            BMR = 10 * weight + 6.25 * height - 5 * age - 161;
             return BMR;
-        }else if (gender == "Male"){
-            BMR = 10*weight + 6.25*height - 5*age + 5;
+        } else if (gender.equals("Male")) {
+            BMR = 10 * weight + 6.25 * height - 5 * age + 5;
             return BMR;
         }
         return 0.0;
     }
-
 
 
 }

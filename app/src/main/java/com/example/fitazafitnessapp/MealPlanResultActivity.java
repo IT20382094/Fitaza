@@ -19,10 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MealPlanResultActivity extends AppCompatActivity {
 
     private Button btnGoToHome;
-    private TextView age;
-    private TextView weight;
-    private TextView height;
-    private TextView gender;
+    private TextView txtBMR;
     DatabaseReference dbRef;
     MealPlanCalculatorActivity result;
 
@@ -31,31 +28,11 @@ public class MealPlanResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_plan_result);
 
-        age =findViewById(R.id.et_age);
-        gender=findViewById(R.id.et_gender);
-        weight=findViewById(R.id.et_weight);
-        height=findViewById(R.id.et_height);
+        txtBMR = findViewById(R.id.txtBMR);
 
-        dbRef = FirebaseDB.getFirebaseDB().child("Profile");
-        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren()){
-//                    result.BMRCalculation(weight.par, height, gender, age);
-                }
-                else
-                    Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        txtBMR.setText(MealPlanCalculatorActivity.BMR + "");
 
         btnGoToHome = findViewById(R.id.btn_go_to_home);
-
 
 
         btnGoToHome.setOnClickListener(new View.OnClickListener() {
@@ -77,10 +54,7 @@ public class MealPlanResultActivity extends AppCompatActivity {
         });
 
 
-
     }
-
-
 
 
 }
