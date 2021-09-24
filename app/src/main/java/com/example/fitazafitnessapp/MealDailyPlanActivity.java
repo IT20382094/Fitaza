@@ -38,12 +38,6 @@ public class MealDailyPlanActivity extends AppCompatActivity {
 
         loadMenus();
 
-//        new DatePickerDialog(MealDailyPlanActivity.this, R.style.DialogTheme, new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-//                //DO SOMETHING
-//            }
-//        }, 2015, 02, 26).show();
 
         btnCalorieCal = findViewById(R.id.btn_calorie_cal);
         btnCalorieCal.setOnClickListener(new View.OnClickListener() {
@@ -82,9 +76,27 @@ public class MealDailyPlanActivity extends AppCompatActivity {
                         lyBreakfastMenu1.setVisibility(View.VISIBLE);
                     }
                     if (value.getMealPlanName().equals("BreakfastMenu2")){
-                        lyLunchMenu1.setVisibility(View.VISIBLE);
+                        lyBreakfastMenu1.setVisibility(View.VISIBLE);
                     }
                     if (value.getMealPlanName().equals("BreakfastMenu3")){
+                        lyBreakfastMenu1.setVisibility(View.VISIBLE);
+                    }
+                    if (value.getMealPlanName().equals("LunchMenu1")) {
+                        lyLunchMenu1.setVisibility(View.VISIBLE);
+                    }
+                    if (value.getMealPlanName().equals("LunchMenu2")){
+                        lyLunchMenu1.setVisibility(View.VISIBLE);
+                    }
+                    if (value.getMealPlanName().equals("LunchMenu3")){
+                        lyLunchMenu1.setVisibility(View.VISIBLE);
+                    }
+                    if (value.getMealPlanName().equals("DinnerMenu1")) {
+                        lyDinnerMenu1.setVisibility(View.VISIBLE);
+                    }
+                    if (value.getMealPlanName().equals("DinnerMenu2")){
+                        lyDinnerMenu1.setVisibility(View.VISIBLE);
+                    }
+                    if (value.getMealPlanName().equals("DinnerMenu3")){
                         lyDinnerMenu1.setVisibility(View.VISIBLE);
                     }
 
@@ -98,3 +110,11 @@ public class MealDailyPlanActivity extends AppCompatActivity {
         });
     }
 }
+
+
+//        new DatePickerDialog(MealDailyPlanActivity.this, R.style.DialogTheme, new DatePickerDialog.OnDateSetListener() {
+//            @Override
+//            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//                //DO SOMETHING
+//            }
+//        }, 2015, 02, 26).show();
