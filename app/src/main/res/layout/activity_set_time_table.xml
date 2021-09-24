@@ -4,231 +4,239 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@drawable/ttable">
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SetTimeTableActivity"
-    >
+    android:background="@drawable/ttable"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SetTimeTableActivity">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_border"
-            android:paddingTop="10dp"
-            android:textAlignment="center"
-            android:paddingBottom="10dp"
-            android:text="Set My Targets"
-            android:textSize="35dp"
-            android:backgroundTint="#80DAD1"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/input_border"
+                android:backgroundTint="#80DAD1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Set My Targets"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="35dp"
+                android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:layout_marginTop="50dp">
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_height="match_parent"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Select a day"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:weightSum="2">
 
-        <Spinner
-            android:id="@+id/spinner_day"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="@drawable/input_border"
-            android:paddingLeft="5dp"
-            android:paddingTop="4dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="8dp"
-            android:autofillHints="creditCardExpirationDate"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Select a day"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <Spinner
+                android:id="@+id/spinner_day"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/input_border"
+                android:paddingLeft="5dp"
+                android:paddingTop="4dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="8dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:layout_marginTop="40dp">
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_height="match_parent"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Select exercise type"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:weightSum="2">
 
-        <Spinner
-            android:id="@+id/spinner_exercise1"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="@drawable/input_border"
-            android:paddingLeft="5dp"
-            android:paddingTop="4dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="8dp"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Select exercise type"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <Spinner
+                android:id="@+id/spinner_exercise1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/input_border"
+                android:paddingLeft="5dp"
+                android:paddingTop="4dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="8dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:layout_marginTop="40dp">
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_height="match_parent"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Input time"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:weightSum="2">
 
-        <EditText
-            android:id="@+id/time1"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="@drawable/input_border"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Input time"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:layout_marginTop="40dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_height="match_parent"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Select exercise type"/>
+            <TimePicker
+                android:id="@+id/time1"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:background="@drawable/input_border"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:timePickerMode="spinner"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <Spinner
-            android:id="@+id/spinner_exercise2"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="@drawable/input_border"
-            android:paddingLeft="5dp"
-            android:paddingTop="4dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="8dp"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:weightSum="2">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:layout_marginTop="40dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Select exercise type"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_height="match_parent"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Input time"/>
+            <Spinner
+                android:id="@+id/spinner_exercise2"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/input_border"
+                android:paddingLeft="5dp"
+                android:paddingTop="4dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="8dp"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <EditText
-            android:id="@+id/time2"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="@drawable/input_border"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:weightSum="2">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:weightSum="2"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Input time"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold" />
 
-<!--        <Button-->
-<!--            android:id="@+id/btn_set_back"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:backgroundTint="@color/teal_700"-->
-<!--            android:paddingTop="15dp"-->
-<!--            android:paddingBottom="15dp"-->
-<!--            android:paddingLeft="30dp"-->
-<!--            android:paddingRight="20dp"-->
-<!--            android:text="Back"-->
-<!--            android:textSize="22dp"-->
-<!--            android:textStyle="bold" />-->
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_set"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/teal_700"
-            android:paddingTop="1dp"
-            android:paddingBottom="1dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TimePicker
+                android:id="@+id/time2"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:background="@drawable/input_border"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:timePickerMode="spinner"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="Done"
-            android:textSize="22dp"
-            android:textStyle="bold" />
+            android:weightSum="2">
+
+            <!--        <Button-->
+            <!--            android:id="@+id/btn_set_back"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:backgroundTint="@color/teal_700"-->
+            <!--            android:paddingTop="15dp"-->
+            <!--            android:paddingBottom="15dp"-->
+            <!--            android:paddingLeft="30dp"-->
+            <!--            android:paddingRight="20dp"-->
+            <!--            android:text="Back"-->
+            <!--            android:textSize="22dp"-->
+            <!--            android:textStyle="bold" />-->
+
+            <Button
+                android:id="@+id/btn_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:padding="11dp"
+                android:text="Done"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
 
 </ScrollView>
