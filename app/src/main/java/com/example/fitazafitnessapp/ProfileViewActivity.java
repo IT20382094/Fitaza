@@ -62,6 +62,14 @@ public class ProfileViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileViewActivity.this, ProfileUpdateActivity.class);
+
+
+                intent.putExtra("age", age.getText().toString());
+                intent.putExtra("gender", gender.getText().toString());
+                intent.putExtra("weight", weight.getText().toString());
+                intent.putExtra("height", height.getText().toString());
+
+
                 startActivity(intent);
             }
         });
@@ -80,6 +88,8 @@ public class ProfileViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileViewActivity.this, YourBMIActivity.class);
+                intent.putExtra("weight", weight.getText().toString());
+                intent.putExtra("height", height.getText().toString());
                 startActivity(intent);
             }
         });

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitazafitnessapp.db.FirebaseDB;
+import com.example.fitazafitnessapp.model.Workout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +25,7 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
     EditText ending_time;
     Button btn_cal, btn_update, btn_delete;
     DatabaseReference dbRef;
+    double calory = 20.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         date = (TextView) findViewById(R.id.date);
         start_time = (TextView) findViewById(R.id.start_time_view);
         target_time = (TextView) findViewById(R.id.target_time_view);
-//        ending_time = findViewById(R.id.ending_time);
+        ending_time = findViewById(R.id.ending_time);
 
         btn_cal = findViewById(R.id.btn_burnt_calories);
         btn_update = findViewById(R.id.btn_update_workout);
@@ -70,6 +73,46 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutUpdate.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btn_cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createDate();
+                Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+    }
+    public void clearControls(){
+        ending_time.setText("");
+    }
+
+    public void createDate(){
+        dbRef = FirebaseDB.getFirebaseDatabaseRef();
+
+        if (TextUtils.isEmpty(date.getText().toString()))
+            Toast.makeText(getApplicationContext(),"Please enter a time", Toast.LENGTH_SHORT).show();
+        else{
+            Workout workoutobj = new Workout();
+            workoutobj.setWorkoutEndingTime(ending_time.getText().toString().trim());
+
+            dbRef.child("Workout").setValue(workoutobj);
+
+            Toast.makeText(getApplicationContext(), "Ending time inserted successfully", Toast.LENGTH_SHORT).show();
+            clearControls();
+        }
     }
 
     public void deleteWorkout(){
@@ -94,11 +137,11 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         });
 
     }
-
-    public void clearControls(){
-        date.setText("");
-        start_time.setText("");
-        target_time.setText("");
-    }
+//
+//    public double cararyCalculate(){
+//        double val = 0;
+//        val = calory*(ending_time-start_time);
+//        return val;
+//    }
 }
 
