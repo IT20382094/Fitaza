@@ -37,79 +37,55 @@ public class ProfileUpdateActivity extends AppCompatActivity {
         btnUpdateProfile = findViewById(R.id.btn_update_profile);
         btnBack = findViewById(R.id.btn_back);
 
+        Intent intent = getIntent();
 
-        Intent intent= getIntent();
-        pAge =intent.getStringExtra("age");
-        pGender=intent.getStringExtra("gender");
-        pWeight=intent.getStringExtra("weight");
-        pHeight =intent.getStringExtra("height");
-
+        pAge = intent.getStringExtra("age");
+        pGender = intent.getStringExtra("gender");
+        pWeight = intent.getStringExtra("weight");
+        pHeight = intent.getStringExtra("height");
 
         age.setText(pAge);
         gender.setText(pGender);
         weight.setText(pWeight);
         height.setText(pHeight);
 
-//        dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
-//        dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.hasChild("Profile")){
-//                    MyProfile myProfile =new MyProfile();
-//                    myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
-//                    myProfile.setGender(gender.getText().toString().trim());
-//                    myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
-//                    myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
-//
-//
-//                    dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
-//                    dbProfile.setValue(myProfile);
-//                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
-//
-//
-//                }
-//                else
-//                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-
-
-
         btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 updateData();
+//                Intent intent = new Intent(ProfileUpdateActivity.this, ProfileViewActivity.class);
+//                startActivity(intent);
+
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(ProfileUpdateActivity.this, ProfileViewActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 
-    public void updateData(){
-        dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
+    public void updateData() {
+        dbProfile = FirebaseDB.getFirebaseDatabaseRef();
         dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild("Profile")){
-                        MyProfile myProfile =new MyProfile();
-                        myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
-                        myProfile.setGender(gender.getText().toString().trim());
-                        myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
-                        myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
+                if (snapshot.hasChild("Profile")) {
+                    MyProfile myProfile = new MyProfile();
+                    myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
+                    myProfile.setGender(gender.getText().toString().trim());
+                    myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
+                    myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
 
+                    dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
+                    dbProfile.setValue(myProfile);
+                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
 
-                        dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
-                        dbProfile.setValue(myProfile);
-                        Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
-
-
-                }
-                else
+                } else
                     Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
             }
 

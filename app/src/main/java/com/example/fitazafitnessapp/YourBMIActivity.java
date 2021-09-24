@@ -18,7 +18,7 @@ public class YourBMIActivity extends AppCompatActivity {
     private Button btnHome, btn_bmi_value, back;
     private TextView bmi_value, view_result;
 
-    private String  pWeight, pHeight, result;
+    private String pWeight, pHeight, result;
     private Double pWt, pHt;
 
     @Override
@@ -26,33 +26,23 @@ public class YourBMIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_bmiactivity);
 
-        //TextView t = (TextView) findViewById(R.id.txt_your_bmi);
-        //t.setText(Html.fromHtml("YOUR BMI (kg/" + "m<sup>2</sup>" + ")"));
-
-
-        weight =findViewById(R.id.weight);
-        height =findViewById(R.id.height);
-        btn_bmi_value=findViewById(R.id.btn_bmi_value);
-        bmi_value=findViewById(R.id.bmi_value);
-        btnHome=findViewById(R.id.btn_go_to_home);
-        view_result=findViewById(R.id.view_result);
-        back =findViewById(R.id.btn_go_to_home_back);
+        weight = findViewById(R.id.weight);
+        height = findViewById(R.id.height);
+        btn_bmi_value = findViewById(R.id.btn_bmi_value);
+        bmi_value = findViewById(R.id.bmi_value);
+        btnHome = findViewById(R.id.btn_go_to_home);
+        view_result = findViewById(R.id.view_result);
+        back = findViewById(R.id.btn_go_to_home_back);
 
         Intent intent = getIntent();
 
-//        pWeight= Double.parseDouble(intent.getStringExtra("weight"));
-//        pHeight =Double.parseDouble(intent.getStringExtra("height"));
-
-       // bmi_value.setText((int) calculateBmi(pWeight,pHeight));
-
-
-        pWeight=intent.getStringExtra("weight");
-        pHeight =intent.getStringExtra("height");
+        pWeight = intent.getStringExtra("weight");
+        pHeight = intent.getStringExtra("height");
         weight.setText(pWeight);
         height.setText(pHeight);
 
-        pWt= Double.parseDouble(pWeight);
-        pHt= Double.parseDouble(pHeight);
+        pWt = Double.parseDouble(pWeight);
+        pHt = Double.parseDouble(pHeight);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,30 +61,31 @@ public class YourBMIActivity extends AppCompatActivity {
         btn_bmi_value.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    double bmi_value =calculateBmi(pWt, pHt);
+                double bmi_value = calculateBmi(pWt, pHt);
 //                double value =bmi_value.setText((int) (pWt*10000/pHt*pHt));
 
-                if(bmi_value <18.5){
-                    result ="Underweight";
-                }else if(bmi_value>= 18.5 && bmi_value <=25){
-                    result ="Normal weight";
-                }else if(bmi_value>= 25 && bmi_value <=30){
-                    result ="Overweight";
-                }else {
+                if (bmi_value < 18.5) {
+                    result = "Underweight";
+                } else if (bmi_value >= 18.5 && bmi_value <= 25) {
+                    result = "Normal weight";
+                } else if (bmi_value >= 25 && bmi_value <= 30) {
+                    result = "Overweight";
+                } else {
                     result = "Obese";
                 }
-                view_result.setText("You are " + result);
+                view_result.setText("You are in " + result);
 
             }
         });
     }
 
-    public double calculateBmi(Double weight, Double height){
-        Double ans = (weight*10000)/(height*height);
+    public double calculateBmi(Double weight, Double height) {
+        double ans = (weight * 10000) / (height * height);
+        bmi_value.setText(String.format("%.2f", ans));
         return ans;
     }
 
-//    public void calculateBmi(View view){
-//        bmi_value.setText((int) (pWt*10000/pHt*pHt));
-//    }
+
 }
+
+
