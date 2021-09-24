@@ -56,12 +56,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="login"
-        android:layout_marginLeft="270dp"/>
+        android:layout_marginLeft="270dp"
+        android:layout_marginRight="33dp"/>
 
     <TextView
         android:id="@+id/buttonSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="33dp"
         android:layout_marginLeft="250dp"
         android:text="Create Account"
         android:layout_marginTop="20dp"
