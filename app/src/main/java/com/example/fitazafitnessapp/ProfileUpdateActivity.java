@@ -23,6 +23,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
     private Button btnUpdateProfile;
     private Button btnBack;
     DatabaseReference dbProfile;
+    private String pAge, pGender, pWeight, pHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,25 +38,46 @@ public class ProfileUpdateActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.btn_back);
 
 
-        dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
-        dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChildren()) {
-                    age.setText(snapshot.child("age").getValue().toString());
-                    gender.setText(snapshot.child("gender").getValue().toString());
-                    weight.setText(snapshot.child("weight").getValue().toString());
-                    height.setText(snapshot.child("height").getValue().toString());
-                } else
-                    Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
-            }
+        Intent intent= getIntent();
+        pAge =intent.getStringExtra("age");
+        pGender=intent.getStringExtra("gender");
+        pWeight=intent.getStringExtra("weight");
+        pHeight =intent.getStringExtra("height");
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
-            }
+        age.setText(pAge);
+        gender.setText(pGender);
+        weight.setText(pWeight);
+        height.setText(pHeight);
 
-        });
+//        dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
+//        dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.hasChild("Profile")){
+//                    MyProfile myProfile =new MyProfile();
+//                    myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
+//                    myProfile.setGender(gender.getText().toString().trim());
+//                    myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
+//                    myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
+//
+//
+//                    dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
+//                    dbProfile.setValue(myProfile);
+//                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+//
+//
+//                }
+//                else
+//                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+
 
 
         btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
@@ -67,10 +89,6 @@ public class ProfileUpdateActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
 
     public void updateData(){
         dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
@@ -105,3 +123,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
 
 
 }
+
+
+
+

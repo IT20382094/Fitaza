@@ -57,7 +57,7 @@ public class MyProfileActivity extends AppCompatActivity {
         btnComputeBmiBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyProfileActivity.this, MenuActivity.class);
+                Intent intent = new Intent(MyProfileActivity.this, ProfileViewActivity.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +94,7 @@ public class MyProfileActivity extends AppCompatActivity {
                 myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
                 myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
 
-                dbProfile.push().setValue(myProfile);
+               // dbProfile.push().setValue(myProfile);
                 dbProfile.child("Profile").setValue(myProfile);
 
                 Toast.makeText(getApplicationContext(), "Profile saved successfully", Toast.LENGTH_SHORT).show();
