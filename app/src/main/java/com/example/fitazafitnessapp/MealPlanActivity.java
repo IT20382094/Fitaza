@@ -26,9 +26,6 @@ public class MealPlanActivity extends AppCompatActivity {
     DatabaseReference dbRef;
     MealPlan mealPlan;
 
-
-
-
     private Button btnMealPlan;
 
     @Override
