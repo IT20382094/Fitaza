@@ -23,8 +23,8 @@ public class SetTimeTableActivity extends AppCompatActivity {
     EditText time1, time2;
     private Button btnSet;
     private Spinner spinnerDay, spinnerExercise1, spinnerExercise2;
-    private static final String[] pathsDay = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-    private static final String[] pathsExercise = {"Arm Exercise", "Thigh Exercise"};
+//    private static final String[] pathsDay = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+//    private static final String[] pathsExercise = {"Arm Exercise", "Thigh Exercise"};
 
     DatabaseReference dbRef;
 
@@ -33,23 +33,23 @@ public class SetTimeTableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_time_table);
 
-        spinnerDay = (Spinner) findViewById(R.id.spinner_day);
-        ArrayAdapter<String> adapterDay = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, pathsDay);
-        adapterDay.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerDay.setAdapter(adapterDay);
-
-        spinnerExercise1 = (Spinner) findViewById(R.id.spinner_exercise1);
-        ArrayAdapter<String> adapterExercise1 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, pathsExercise);
-        adapterExercise1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerExercise1.setAdapter(adapterExercise1);
-
-        spinnerExercise2 = (Spinner) findViewById(R.id.spinner_exercise2);
-        ArrayAdapter<String> adapterExercise2 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, pathsExercise);
-        adapterExercise2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerExercise2.setAdapter(adapterExercise2);
+//        spinnerDay = (Spinner) findViewById(R.id.spinner_day);
+//        ArrayAdapter<String> adapterDay = new ArrayAdapter<String>(getApplicationContext(),
+//                android.R.layout.simple_spinner_item, pathsDay);
+//        adapterDay.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerDay.setAdapter(adapterDay);
+//
+//        spinnerExercise1 = (Spinner) findViewById(R.id.spinner_exercise1);
+//        ArrayAdapter<String> adapterExercise1 = new ArrayAdapter<String>(getApplicationContext(),
+//                android.R.layout.simple_spinner_item, pathsExercise);
+//        adapterExercise1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerExercise1.setAdapter(adapterExercise1);
+//
+//        spinnerExercise2 = (Spinner) findViewById(R.id.spinner_exercise2);
+//        ArrayAdapter<String> adapterExercise2 = new ArrayAdapter<String>(getApplicationContext(),
+//                android.R.layout.simple_spinner_item, pathsExercise);
+//        adapterExercise2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerExercise2.setAdapter(adapterExercise2);
 
 
         btnSet = findViewById(R.id.btn_set);
@@ -64,6 +64,10 @@ public class SetTimeTableActivity extends AppCompatActivity {
 
         time1 = findViewById(R.id.time1);
         time2 = findViewById(R.id.time2);
+        spinnerDay = findViewById(R.id.spinner_day);
+        spinnerExercise1 = findViewById(R.id.spinner_exercise1);
+        spinnerExercise2 = findViewById(R.id.spinner_exercise2);
+
 
         btnSet = findViewById(R.id.btn_set);
 
@@ -72,7 +76,6 @@ public class SetTimeTableActivity extends AppCompatActivity {
         btnSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 createData();
                 Intent intent = new Intent(SetTimeTableActivity.this, ViewTimeTableActivity.class);
                 startActivity(intent);
