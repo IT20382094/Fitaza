@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.fitazafitnessapp.db.FirebaseDB;
 import com.example.fitazafitnessapp.model.MealPlan;
@@ -23,7 +24,9 @@ public class MealDailyPlanActivity extends AppCompatActivity {
     private Button btnDailyPlan;
     private Button btnCalorieCal;
     private Button btnDelete;
+    private Button btnUpdate;
     private LinearLayout lyBreakfastMenu1, lyLunchMenu1, lyDinnerMenu1;
+    DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,25 @@ public class MealDailyPlanActivity extends AppCompatActivity {
         btnDailyPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MealDailyPlanActivity.this, MealPlanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnUpdate = findViewById(R.id.btn_update_meal);
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MealDailyPlanActivity.this, MealPlanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnDelete = findViewById(R.id.btn_delete_meal);
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deletePlan();
                 Intent intent = new Intent(MealDailyPlanActivity.this, MealPlanActivity.class);
                 startActivity(intent);
             }
@@ -108,6 +130,30 @@ public class MealDailyPlanActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    public void deletePlan(){
+        dbRef = FirebaseDB.getFirebaseDatabaseRef();
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild("mealPlan")){
+                    dbRef = FirebaseDB.getFirebaseDatabaseRef().child("mealPlan");
+                    dbRef.removeValue();
+                    Toast.makeText(getApplicationContext(), "Data deleted Successfully", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "No source to delete", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }
 
