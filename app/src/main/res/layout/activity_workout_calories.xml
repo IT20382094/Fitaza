@@ -52,6 +52,7 @@
             android:text="Date"/>
 
         <EditText
+            android:id="@+id/date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -83,6 +84,7 @@
             android:text="Start Time"/>
 
         <EditText
+            android:id="@+id/start_time_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -114,6 +116,7 @@
             android:text="Target Time"/>
 
         <EditText
+            android:id="@+id/target_time_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -145,6 +148,7 @@
             android:text="Enter Ending Time"/>
 
         <EditText
+            android:id="@+id/ending_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
