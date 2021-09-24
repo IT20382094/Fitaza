@@ -66,8 +66,6 @@ public class WorkoutStepsActivity extends AppCompatActivity {
 
         btnNext = findViewById(R.id.btn_next);
 
-        dbRef = FirebaseDB.getFirebaseDatabaseRef();
-
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +85,7 @@ public class WorkoutStepsActivity extends AppCompatActivity {
     }
 
     public void createData(){
-        dbRef = FirebaseDatabase.getInstance().getReference();
+        dbRef = FirebaseDB.getFirebaseDatabaseRef();
 
         if (TextUtils.isEmpty(date.getText().toString()))
             Toast.makeText(getApplicationContext(),"Please enter a date", Toast.LENGTH_SHORT).show();
@@ -103,8 +101,9 @@ public class WorkoutStepsActivity extends AppCompatActivity {
             workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
             workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
 
-            dbRef.push().setValue(workoutobj);
+//            dbRef.push().setValue(workoutobj);
 
+            dbRef.child("Workout").setValue(workoutobj);
             //feedback to user via a toast message
             Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
             clearControls();
