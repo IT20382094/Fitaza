@@ -23,6 +23,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_marginBottom="30dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="30dp"
         android:hint="Enter Name"
         android:textStyle="bold"
         android:textColor="@color/white"/>
@@ -34,6 +36,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter Email "
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         android:textColor="@color/white"
         android:textStyle="bold"/>
@@ -45,6 +49,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Enter Password "
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         android:textStyle="bold"
         android:textColor="@color/white"/>
@@ -56,6 +62,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Re-enter Password "
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         android:textColor="@color/white"
         android:textStyle="bold"/>
