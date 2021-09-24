@@ -43,6 +43,7 @@
             android:paddingRight="20dp">
 
             <TextView
+                android:id="@+id/bmi_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bmi_border"
@@ -50,9 +51,22 @@
                 android:paddingTop="20dp"
                 android:paddingRight="60dp"
                 android:paddingBottom="20dp"
-                android:text="28"
                 android:textSize="30dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:backgroundTint="@color/teal_700"-->
+<!--                android:onClick="calculateBmi"-->
+<!--                android:paddingTop="15dp"-->
+<!--                android:paddingBottom="15dp"-->
+<!--                android:text="BMI"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
 
         </LinearLayout>
 
