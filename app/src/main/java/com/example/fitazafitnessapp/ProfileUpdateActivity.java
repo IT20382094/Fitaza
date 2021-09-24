@@ -37,7 +37,6 @@ public class ProfileUpdateActivity extends AppCompatActivity {
         btnUpdateProfile = findViewById(R.id.btn_update_profile);
         btnBack = findViewById(R.id.btn_back);
 
-
         Intent intent = getIntent();
 
         pAge = intent.getStringExtra("age");
@@ -58,6 +57,15 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileUpdateActivity.this, ProfileViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void updateData() {
@@ -72,11 +80,9 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                     myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
                     myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
 
-
                     dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
                     dbProfile.setValue(myProfile);
                     Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
-
 
                 } else
                     Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();

@@ -31,23 +31,22 @@ public class ProfileViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_view);
 
-        age =findViewById(R.id.age);
-        gender=findViewById(R.id.gender);
-        weight=findViewById(R.id.weight);
-        height=findViewById(R.id.height);
+        age = findViewById(R.id.age);
+        gender = findViewById(R.id.gender);
+        weight = findViewById(R.id.weight);
+        height = findViewById(R.id.height);
         btn_update = findViewById(R.id.btn_update);
 
         dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
         dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren()){
+                if (snapshot.hasChildren()) {
                     age.setText(snapshot.child("age").getValue().toString());
                     gender.setText(snapshot.child("gender").getValue().toString());
                     weight.setText(snapshot.child("weight").getValue().toString());
                     height.setText(snapshot.child("height").getValue().toString());
-                }
-                else
+                } else
                     Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
             }
 
@@ -63,12 +62,10 @@ public class ProfileViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileViewActivity.this, ProfileUpdateActivity.class);
 
-
                 intent.putExtra("age", age.getText().toString());
                 intent.putExtra("gender", gender.getText().toString());
                 intent.putExtra("weight", weight.getText().toString());
                 intent.putExtra("height", height.getText().toString());
-
 
                 startActivity(intent);
             }
@@ -107,24 +104,23 @@ public class ProfileViewActivity extends AppCompatActivity {
 
     }
 
-    public void clearControls(){
+    public void clearControls() {
         age.setText("");
         gender.setText("");
         weight.setText("");
         height.setText("");
     }
 
-    public void deleteProfile(){
+    public void deleteProfile() {
         dbProfile = FirebaseDB.getFirebaseDatabaseRef();
         dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChild("Profile")){
+                if (snapshot.hasChild("Profile")) {
                     dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
                     dbProfile.removeValue();
                     Toast.makeText(getApplicationContext(), "Data deleted Successfully", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(getApplicationContext(), "No source to delete", Toast.LENGTH_SHORT).show();
                 }
             }
