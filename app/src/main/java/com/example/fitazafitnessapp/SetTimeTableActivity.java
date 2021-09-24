@@ -13,7 +13,7 @@ public class SetTimeTableActivity extends AppCompatActivity {
 
     private Button btnSet;
     private Spinner spinnerDay, spinnerExercise1, spinnerExercise2;
-    private static final String[] pathsDay = {"Sunday", "Monday", "Tuesday"};
+    private static final String[] pathsDay = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     private static final String[] pathsExercise = {"Arm Exercise", "Thigh Exercise"};
 
     @Override

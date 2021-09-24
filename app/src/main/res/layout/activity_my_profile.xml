@@ -32,11 +32,44 @@
 
             </LinearLayout>
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="Age"
+            android:textSize="19dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:hint="@string/age"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
             android:weightSum="2">
 
@@ -50,18 +83,31 @@
                 android:textSize="19dp"
                 android:textStyle="bold"/>
 
-            <EditText
-                android:layout_width="0dp"
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/input_border"
-                android:ems="10"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="8dp"
-                android:textSize="15dp"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                android:backgroundTint="@color/colorPrimary"
+                android:checked="true"
+                android:hint="@string/male"
+                android:text="Male"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/female"
+                android:text="Female"
+                android:textSize="18dp" />
+
+        </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
@@ -77,16 +123,18 @@
                 android:gravity="center_vertical"
                 android:layout_weight="1"
                 android:textColor="@color/black"
-                android:text="Weight (Pounds)"
+                android:text="Weight (Kg)"
                 android:textSize="19dp"
                 android:textStyle="bold"/>
 
             <EditText
+                android:id="@+id/weights"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/input_border"
                 android:ems="10"
+                android:hint="@string/weight"
                 android:paddingLeft="8dp"
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
@@ -108,16 +156,18 @@
                 android:gravity="center_vertical"
                 android:layout_weight="1"
                 android:textColor="@color/black"
-                android:text="Height (Inches)"
+                android:text="Height (cm)"
                 android:textSize="19dp"
                 android:textStyle="bold"/>
 
             <EditText
+                android:id="@+id/height"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/input_border"
                 android:ems="10"
+                android:hint="@string/height"
                 android:paddingLeft="8dp"
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
@@ -126,36 +176,6 @@
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_height="wrap_content"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:text="Age"
-                android:textSize="19dp"
-                android:textStyle="bold"/>
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/input_border"
-                android:ems="10"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="8dp"
-                android:textSize="15dp"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-        </LinearLayout>
 
 
     <LinearLayout
@@ -169,7 +189,7 @@
         android:layout_marginBottom="20dp">
 
         <Button
-            android:id="@+id/btn_compute_bmi_back"
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -182,17 +202,18 @@
             android:textSize="20dp"/>
 
         <Button
-            android:id="@+id/btn_compute_bmi"
+            android:id="@+id/btn_update_profile"
             android:layout_width="wrap_content"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/teal_700"
+            android:hint="@string/btn_add_profile"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            android:layout_marginLeft="10dp"
-            android:backgroundTint="@color/teal_700"
-            android:text="Compute BMI"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:text="Add Profile"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
