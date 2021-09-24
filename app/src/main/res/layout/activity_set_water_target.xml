@@ -6,7 +6,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true"
-    android:background="@drawable/timetable">
+    android:background="@drawable/water">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:background="@drawable/input_border"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="Set Water Targets"
+            android:text="Set Daily Water Target"
             android:textAlignment="center"
             android:backgroundTint="#80DAD1"
             android:textColor="@color/black"
@@ -37,97 +37,39 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="30dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/input_border"
-        android:orientation="vertical"
-        android:paddingRight="10dp">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:layout_marginRight="15dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:background="@drawable/input_border"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingRight="10dp">-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="Expected intake in a week"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:text="Expected intake in a week"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="23dp"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginBottom="10dp"
-            android:text="18 Liters"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:text="18 Liters"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/input_border"
-        android:orientation="vertical"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Expected - 2.7 liters"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Achieved - 1.9 liters"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="More to go - 800 mililiters"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:backgroundTint="@color/teal_700"
-            android:text="Done"
-            android:layout_marginBottom="10dp"
-            android:textSize="23dp"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -146,16 +88,49 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="Tuesday"
+            android:text="Good health starts with staying hydrated! Set a daily water intake target to stay on track. One glass is 250ml."
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="23dp"
             android:textStyle="bold" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/input_border"
+        android:orientation="vertical"
+        android:paddingRight="10dp">
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:text="Monday"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="23dp"-->
+<!--            android:textStyle="bold" />-->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="Expected - 2.7 liters"
+            android:text="Expected water intake"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:hint="8 glasses"
             android:textSize="20dp"
             android:textStyle="bold"/>
 
@@ -163,7 +138,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="Achieved - 1.9 liters"
+            android:textColor="@color/black"
+            android:text="Achieved water intake"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:hint="6 glasses"
             android:textSize="20dp"
             android:textStyle="bold"/>
 
@@ -171,7 +155,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="More to go - 800 mililiters"
+            android:textColor="@color/black"
+            android:text="More to go"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:hint="2 glasses"
             android:textSize="20dp"
             android:textStyle="bold"/>
 
@@ -185,6 +178,65 @@
             android:text="Done"
             android:layout_marginBottom="10dp"
             android:textSize="23dp"/>
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:layout_marginRight="15dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:background="@drawable/input_border"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingRight="10dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:text="Tuesday"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="23dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:text="Expected - 2.7 liters"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:text="Achieved - 1.9 liters"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:text="More to go - 800 mililiters"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:paddingRight="20dp"-->
+<!--            android:backgroundTint="@color/teal_700"-->
+<!--            android:text="Done"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:textSize="23dp"/>-->
 
         </LinearLayout>
 
