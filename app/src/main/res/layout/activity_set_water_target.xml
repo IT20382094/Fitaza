@@ -37,40 +37,6 @@
 
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:layout_marginLeft="15dp"-->
-<!--        android:layout_marginRight="15dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:paddingLeft="10dp"-->
-<!--        android:background="@drawable/input_border"-->
-<!--        android:orientation="vertical"-->
-<!--        android:paddingRight="10dp">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:paddingTop="10dp"-->
-<!--            android:paddingBottom="10dp"-->
-<!--            android:text="Expected intake in a week"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="23dp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="50dp"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            android:text="18 Liters"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold"/>-->
-
-<!--    </LinearLayout>-->
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,16 +72,6 @@
         android:background="@drawable/input_border"
         android:orientation="vertical"
         android:paddingRight="10dp">
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:paddingTop="10dp"-->
-<!--            android:paddingBottom="10dp"-->
-<!--            android:text="Monday"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="23dp"-->
-<!--            android:textStyle="bold" />-->
 
         <TextView
             android:layout_width="match_parent"
@@ -181,64 +137,21 @@
 
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:layout_marginLeft="15dp"-->
-<!--        android:layout_marginRight="15dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:paddingLeft="10dp"-->
-<!--        android:background="@drawable/input_border"-->
-<!--        android:orientation="vertical"-->
-<!--        android:paddingRight="10dp">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:paddingTop="10dp"-->
-<!--            android:paddingBottom="10dp"-->
-<!--            android:text="Tuesday"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="23dp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="50dp"-->
-<!--            android:text="Expected - 2.7 liters"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold"/>-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="50dp"-->
-<!--            android:text="Achieved - 1.9 liters"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold"/>-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="50dp"-->
-<!--            android:text="More to go - 800 mililiters"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold"/>-->
-
-<!--        <Button-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="right"-->
-<!--            android:paddingLeft="20dp"-->
-<!--            android:paddingRight="20dp"-->
-<!--            android:backgroundTint="@color/teal_700"-->
-<!--            android:text="Done"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            android:textSize="23dp"/>-->
-
-        </LinearLayout>
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_back1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:backgroundTint="@color/teal_700"
+        android:layout_marginTop="25dp"
+        android:text="Go to menu"
+        android:textSize="22dp"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
 </ScrollView>

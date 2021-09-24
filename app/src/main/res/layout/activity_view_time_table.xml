@@ -38,136 +38,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/input_border"
-        android:orientation="vertical"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Arm Exercise"
-            android:textSize="19dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="From 6:00 AM to 6:30 AM"
-            android:textSize="19dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Thigh Exercise"
-            android:textSize="19dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="From 6:30 AM to 7:00 AM"
-            android:textSize="19dp"
-            android:textStyle="bold"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:backgroundTint="@color/teal_700"
-            android:text="Delete"
-            android:layout_marginBottom="10dp"
-            android:textSize="23dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/input_border"
-        android:orientation="vertical"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="Tuesday"
-            android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Leg Exercise"
-            android:textSize="19dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="From 6:00 AM to 6:30 AM"
-            android:textSize="19dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Chest Exercise"
-            android:textSize="19dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="From 6:30 AM to 7:00 AM"
-            android:textSize="19dp"
-            android:textStyle="bold"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:backgroundTint="@color/teal_700"
-            android:text="Delete"
-            android:layout_marginBottom="10dp"
-            android:textSize="23dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_width="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -204,6 +74,12 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_timetable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"/>
 
 </LinearLayout>
 </ScrollView>
