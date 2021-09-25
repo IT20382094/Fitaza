@@ -69,17 +69,24 @@ public class MyProfileActivity extends AppCompatActivity {
     public void insertProfile() {
         dbProfile = FirebaseDB.getFirebaseDatabaseRef();
         if (TextUtils.isEmpty(age.getText().toString()))
+//           age.requestFocus();
+//           age.setError("Please enter an age");
             Toast.makeText(getApplicationContext(), "Please enter an age", Toast.LENGTH_SHORT).show();
         else if (TextUtils.isEmpty(weight.getText().toString()))
             Toast.makeText(getApplicationContext(), "Please enter your weight", Toast.LENGTH_SHORT).show();
         else if (TextUtils.isEmpty(height.getText().toString()))
             Toast.makeText(getApplicationContext(), "Please enter your height", Toast.LENGTH_SHORT).show();
 
+//        else if(!age.getText().toString().matches("[0-9 ]+")){
+//            Toast.makeText(getApplicationContext(), "Please enter only numbers", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(!weight.getText().toString().matches("[0-9. ]+")){
+//            Toast.makeText(getApplicationContext(), "Please enter only numbers", Toast.LENGTH_SHORT).show();
+//        }
+
         else {
             MyProfile myProfile = new MyProfile();
-
             myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
-
             if (male.isChecked()) {
                 myProfile.setGender(male.getText().toString().trim());
             } else if (female.isChecked()) {
@@ -98,3 +105,20 @@ public class MyProfileActivity extends AppCompatActivity {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
