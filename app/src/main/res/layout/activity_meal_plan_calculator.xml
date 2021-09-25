@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
         android:weightSum="2">
 
@@ -61,7 +61,7 @@
             android:paddingTop="4dp"
             android:paddingRight="5dp"
             android:paddingBottom="8dp"
-            android:textAlignment="center"
+            android:textAlignment="textEnd"
             android:textSize="16dp"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -207,7 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:weightSum="2"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="20dp">
 
         <Button

@@ -77,7 +77,11 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutUpdate.class);
+                intent.putExtra("workoutDay", date.getText().toString());
+                intent.putExtra("workoutStartTime", start_time.getText().toString());
+                intent.putExtra("workoutTargetTime", target_time.getText().toString());
                 startActivity(intent);
 
             }

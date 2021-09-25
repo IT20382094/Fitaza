@@ -2,14 +2,17 @@ package com.example.fitazafitnessapp.model;
 
 public class Timetable {
 
-        private String day;
-        private String exercise1;
-        private String time1;
-        private String exercise2;
-        private String time2;
+    private String day;
+    private String exercise1;
+    private int time1H;
+    private int time1M;
+    private int time2H;
+    private int time2M;
+    private String exercise2;
+    private String time2;
 
-        public Timetable() {
-        }
+    public Timetable() {
+    }
 
     public String getDay() {
         return day;
@@ -27,12 +30,36 @@ public class Timetable {
         this.exercise1 = exercise1;
     }
 
-    public String getTime1() {
-        return time1;
+    public int getTime1H() {
+        return time1H;
     }
 
-    public void setTime1(String time1) {
-        this.time1 = time1;
+    public void setTime1H(int time1H) {
+        this.time1H = time1H;
+    }
+
+    public int getTime1M() {
+        return time1M;
+    }
+
+    public void setTime1M(int time1M) {
+        this.time1M = time1M;
+    }
+
+    public int getTime2H() {
+        return time2H;
+    }
+
+    public void setTime2H(int time2H) {
+        this.time2H = time2H;
+    }
+
+    public int getTime2M() {
+        return time2M;
+    }
+
+    public void setTime2M(int time2M) {
+        this.time2M = time2M;
     }
 
     public String getExercise2() {

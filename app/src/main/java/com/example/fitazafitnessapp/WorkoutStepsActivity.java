@@ -75,8 +75,6 @@ public class WorkoutStepsActivity extends AppCompatActivity {
             workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
             workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
 
-//            dbRef.push().setValue(workoutobj);
-
             dbRef.child("Workout").setValue(workoutobj);
             //feedback to user via a toast message
             Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
