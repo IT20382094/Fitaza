@@ -52,7 +52,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
         btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // updateData();
+                updateData();
 //                Intent intent = new Intent(ProfileUpdateActivity.this, ProfileViewActivity.class);
 //                startActivity(intent);
 
@@ -69,32 +69,32 @@ public class ProfileUpdateActivity extends AppCompatActivity {
 
     }
 
-//    public void updateData() {
-//        dbProfile = FirebaseDB.getFirebaseDatabaseRef();
-//        dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.hasChild("Profile")) {
-//                    MyProfile myProfile = new MyProfile();
-//                    myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
-//                    myProfile.setGender(gender.getText().toString().trim());
-//                    myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
-//                    myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
-//
-//                    dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
-//                    dbProfile.setValue(myProfile);
-//                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
-//
-//                } else
-//                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//    }
+    public void updateData() {
+        dbProfile = FirebaseDB.getFirebaseDatabaseRef();
+        dbProfile.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild("Profile")) {
+                    MyProfile myProfile = new MyProfile();
+                    myProfile.setAge(Integer.parseInt(age.getText().toString().trim()));
+                    myProfile.setGender(gender.getText().toString().trim());
+                    myProfile.setWeight(Double.parseDouble(weight.getText().toString().trim()));
+                    myProfile.setHeight(Double.parseDouble(height.getText().toString().trim()));
+
+                    dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
+                    dbProfile.setValue(myProfile);
+                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+
+                } else
+                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }
 
 
