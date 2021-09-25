@@ -20,17 +20,16 @@ import com.google.firebase.database.ValueEventListener;
 
 public class WorkoutUpdate extends AppCompatActivity {
 
-    EditText date, start_time, target_time;
+    EditText start_time, target_time;
     DatabaseReference dbRef;
     Button btn_update;
-    private String pDate, pStart, pTarget;
+    private String pStart, pTarget;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_update);
 
-        date = findViewById(R.id.workout_date);
         start_time = findViewById(R.id.workout_start_time);
         target_time = findViewById(R.id.workout_end_time);
 
@@ -38,11 +37,9 @@ public class WorkoutUpdate extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        pDate = intent.getStringExtra("workoutDay");
         pStart = intent.getStringExtra("workoutStartTime");
         pTarget = intent.getStringExtra("workoutTargetTime");
 
-        date.setText(pDate);
         start_time.setText(pStart);
         target_time.setText(pTarget);
 
@@ -64,9 +61,9 @@ public class WorkoutUpdate extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.hasChild("Workout")){
                     Workout workoutobj = new Workout();
-                    workoutobj.setWorkoutDay(date.getText().toString().trim());
-                    workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
-                    workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
+//                    workoutobj.setWorkoutDay(date.getText().toString().trim());
+//                    workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
+//                    workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
 
                     dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
                     dbRef.setValue(workoutobj);
@@ -86,7 +83,6 @@ public class WorkoutUpdate extends AppCompatActivity {
     }
 
     public void clearControls(){
-        date.setText("");
         start_time.setText("");
         target_time.setText("");
     }
