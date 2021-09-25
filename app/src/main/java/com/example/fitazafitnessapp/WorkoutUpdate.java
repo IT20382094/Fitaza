@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.fitazafitnessapp.db.FirebaseDB;
@@ -20,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class WorkoutUpdate extends AppCompatActivity {
 
-    EditText start_time, target_time;
+    TimePicker start_time, target_time;
     DatabaseReference dbRef;
     Button btn_update;
     private String pStart, pTarget;
@@ -39,9 +40,11 @@ public class WorkoutUpdate extends AppCompatActivity {
 
         pStart = intent.getStringExtra("workoutStartTime");
         pTarget = intent.getStringExtra("workoutTargetTime");
+//
+//        start_time.setText(pStart);
+//        target_time.setText(pTarget);
 
-        start_time.setText(pStart);
-        target_time.setText(pTarget);
+
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +70,6 @@ public class WorkoutUpdate extends AppCompatActivity {
 
                     dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
                     dbRef.setValue(workoutobj);
-                    clearControls();
                     Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
                 }
                 else
@@ -82,8 +84,8 @@ public class WorkoutUpdate extends AppCompatActivity {
 
     }
 
-    public void clearControls(){
-        start_time.setText("");
-        target_time.setText("");
-    }
+//    public void clearControls(){
+//        start_time.setText("");
+//        target_time.setText("");
+//    }
 }
