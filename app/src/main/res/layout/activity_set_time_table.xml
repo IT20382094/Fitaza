@@ -213,6 +213,8 @@
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         </LinearLayout>
+        
+    </LinearLayout>
 
     </LinearLayout>
 
