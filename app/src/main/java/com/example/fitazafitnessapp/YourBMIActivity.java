@@ -62,7 +62,6 @@ public class YourBMIActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 double bmi_value = calculateBmi(pWt, pHt);
-//                double value =bmi_value.setText((int) (pWt*10000/pHt*pHt));
 
                 if (bmi_value < 18.5) {
                     result = "Underweight";
@@ -84,8 +83,10 @@ public class YourBMIActivity extends AppCompatActivity {
         bmi_value.setText(String.format("%.2f", ans));
         return ans;
     }
-
-
 }
+
+
+
+
 
 
