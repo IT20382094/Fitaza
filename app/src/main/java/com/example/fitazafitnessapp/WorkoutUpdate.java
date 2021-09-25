@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.fitazafitnessapp.db.FirebaseDB;
@@ -20,17 +21,16 @@ import com.google.firebase.database.ValueEventListener;
 
 public class WorkoutUpdate extends AppCompatActivity {
 
-    EditText date, start_time, target_time;
+    TimePicker start_time, target_time;
     DatabaseReference dbRef;
     Button btn_update;
-    private String pDate, pStart, pTarget;
+    private String pStart, pTarget;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_update);
 
-        date = findViewById(R.id.workout_date);
         start_time = findViewById(R.id.workout_start_time);
         target_time = findViewById(R.id.workout_end_time);
 
@@ -38,13 +38,13 @@ public class WorkoutUpdate extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        pDate = intent.getStringExtra("workoutDay");
         pStart = intent.getStringExtra("workoutStartTime");
         pTarget = intent.getStringExtra("workoutTargetTime");
+//
+//        start_time.setText(pStart);
+//        target_time.setText(pTarget);
 
-        date.setText(pDate);
-        start_time.setText(pStart);
-        target_time.setText(pTarget);
+
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,13 +64,12 @@ public class WorkoutUpdate extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.hasChild("Workout")){
                     Workout workoutobj = new Workout();
-                    workoutobj.setWorkoutDay(date.getText().toString().trim());
-                    workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
-                    workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
+//                    workoutobj.setWorkoutDay(date.getText().toString().trim());
+//                    workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
+//                    workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
 
                     dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
                     dbRef.setValue(workoutobj);
-                    clearControls();
                     Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
                 }
                 else
@@ -85,9 +84,8 @@ public class WorkoutUpdate extends AppCompatActivity {
 
     }
 
-    public void clearControls(){
-        date.setText("");
-        start_time.setText("");
-        target_time.setText("");
-    }
+//    public void clearControls(){
+//        start_time.setText("");
+//        target_time.setText("");
+//    }
 }

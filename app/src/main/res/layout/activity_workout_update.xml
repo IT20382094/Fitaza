@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    tools:context=".MyProfileActivity"
-    android:background="@drawable/workout">
+    android:layout_height="match_parent"
+    android:background="@drawable/workout"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MealDailyPlanActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +20,8 @@
         android:paddingRight="10dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,46 +33,46 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_height="wrap_content"
-        android:weightSum="2">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:weightSum="2">-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:layout_weight="1"
-            android:textColor="@color/black"
-            android:text="Enter Date"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:layout_weight="1"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:text="Enter Date"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:layout_marginTop="10dp"
-        android:weightSum="3">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="right"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:weightSum="3">-->
 
-        <EditText
-            android:id="@+id/workout_date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:background="@drawable/input_border"
-            android:ems="10"
-            android:paddingLeft="8dp"
-            android:paddingTop="4dp"
-            android:paddingRight="5dp"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp"
-            android:textSize="15dp" />
+<!--        <EditText-->
+<!--            android:id="@+id/workout_date"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:background="@drawable/input_border"-->
+<!--            android:ems="10"-->
+<!--            android:paddingLeft="8dp"-->
+<!--            android:paddingTop="4dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:paddingBottom="8dp"-->
+<!--            android:textSize="15dp" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,26 +92,44 @@
 
     </LinearLayout>
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="right"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:weightSum="3">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/workout_start_time"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:background="@drawable/input_border"-->
+<!--            android:ems="10"-->
+<!--            android:paddingLeft="8dp"-->
+<!--            android:paddingTop="4dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:paddingBottom="8dp"-->
+<!--            android:textSize="15dp" />-->
+
+<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:layout_marginTop="10dp"
-        android:weightSum="3">
+        android:layout_height="wrap_content">
 
-        <EditText
+        <TimePicker
             android:id="@+id/workout_start_time"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_height="130dp"
+            android:layout_weight="1"
             android:background="@drawable/input_border"
-            android:ems="10"
-            android:paddingLeft="8dp"
-            android:paddingTop="4dp"
+            android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp"
-            android:textSize="15dp" />
+            android:numbersTextColor="@color/black"
+            android:amPmTextColor="@color/black"
+            android:timePickerMode="spinner"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
@@ -129,26 +151,44 @@
 
     </LinearLayout>
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="right"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:weightSum="3">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/workout_end_time"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:background="@drawable/input_border"-->
+<!--            android:ems="10"-->
+<!--            android:paddingLeft="8dp"-->
+<!--            android:paddingTop="4dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:paddingBottom="8dp"-->
+<!--            android:textSize="15dp" />-->
+
+<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:layout_marginTop="10dp"
-        android:weightSum="3">
+        android:layout_height="wrap_content">
 
-        <EditText
+        <TimePicker
             android:id="@+id/workout_end_time"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_height="130dp"
+            android:layout_weight="1"
             android:background="@drawable/input_border"
-            android:ems="10"
-            android:paddingLeft="8dp"
-            android:paddingTop="4dp"
+            android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp"
-            android:textSize="15dp" />
+            android:numbersTextColor="@color/black"
+            android:amPmTextColor="@color/black"
+            android:timePickerMode="spinner"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
@@ -156,7 +196,7 @@
         android:layout_width="wrap_content"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
 
@@ -178,3 +218,4 @@
 
 
 </LinearLayout>
+</ScrollView>
