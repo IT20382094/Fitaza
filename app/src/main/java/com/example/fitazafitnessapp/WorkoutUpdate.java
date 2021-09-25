@@ -11,33 +11,45 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitazafitnessapp.db.FirebaseDB;
 import com.example.fitazafitnessapp.model.Workout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class WorkoutUpdate extends AppCompatActivity {
 
-    TextView date, start_time, target_time;
+    EditText date, start_time, target_time;
     DatabaseReference dbRef;
     Button btn_update;
-    Workout workoutobj;
+    private String pDate, pStart, pTarget;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_update);
 
-        date = (TextView) findViewById(R.id.workout_date);
-        start_time = (TextView) findViewById(R.id.workout_start_time);
-        target_time = (TextView) findViewById(R.id.workout_end_time);
+        date = findViewById(R.id.workout_date);
+        start_time = findViewById(R.id.workout_start_time);
+        target_time = findViewById(R.id.workout_end_time);
+
+        btn_update = findViewById(R.id.btn_next);
+
+        Intent intent = getIntent();
+
+        pDate = intent.getStringExtra("workoutDay");
+        pStart = intent.getStringExtra("workoutStartTime");
+        pTarget = intent.getStringExtra("workoutTargetTime");
+
+        date.setText(pDate);
+        start_time.setText(pStart);
+        target_time.setText(pTarget);
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                updateData();
+                updateData();
                 Intent intent = new Intent(WorkoutUpdate.this, WorkoutCaloriesActivity.class);
                 startActivity(intent);
 
@@ -45,31 +57,33 @@ public class WorkoutUpdate extends AppCompatActivity {
         });
     }
 
-//    public void updateData(){
-//        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.hasChild("Workout")){
-//                    workoutobj.setWorkoutDay(date.getText().toString().trim());
-//                    workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
-//                    workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
-//
-//                    dbRef = FirebaseDatabase.getInstance().getReference().child("Workout");
-//                    dbRef.setValue(workoutobj);
-//                    clearControls();
-//                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
-//                }
-//                else
-//                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//
-//    }
+    public void updateData(){
+        dbRef = FirebaseDB.getFirebaseDatabaseRef();
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChild("Workout")){
+                    Workout workoutobj = new Workout();
+                    workoutobj.setWorkoutDay(date.getText().toString().trim());
+                    workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
+                    workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
+
+                    dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
+                    dbRef.setValue(workoutobj);
+                    clearControls();
+                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 
     public void clearControls(){
         date.setText("");
