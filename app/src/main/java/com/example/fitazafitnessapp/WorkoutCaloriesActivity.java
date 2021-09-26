@@ -87,6 +87,7 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
+                //calculateCalories();
                 startActivity(intent);
 
             }
@@ -112,15 +113,16 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+//                caloryCalculate();
             }
         });
 
     }
-//
-//    public double cararyCalculate(){
-//        double val = 0;
-//        val = calory*(ending_time-start_time);
-//        return val;
-//    }
+
+    public double caloryCalculate(double calory, int target_time, int start_time){
+        double val = 0;
+        val = calory*(double)(target_time-start_time);
+        return val;
+    }
 }
 

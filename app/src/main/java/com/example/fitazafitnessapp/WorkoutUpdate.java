@@ -64,9 +64,10 @@ public class WorkoutUpdate extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.hasChild("Workout")){
                     Workout workoutobj = new Workout();
-//                    workoutobj.setWorkoutDay(date.getText().toString().trim());
-//                    workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
-//                    workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
+                    workoutobj.setWorkoutStartTimeH(start_time.getHour());
+                    workoutobj.setWorkoutStartTimeM(target_time.getMinute());
+                    workoutobj.setWorkoutTargetTimeH(target_time.getHour());
+                    workoutobj.setWorkoutTargetTimeM(target_time.getMinute());
 
                     dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
                     dbRef.setValue(workoutobj);
