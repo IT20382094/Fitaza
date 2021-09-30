@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -40,18 +38,13 @@ public class WorkoutUpdate extends AppCompatActivity {
 
         pStart = intent.getStringExtra("workoutStartTime");
         pTarget = intent.getStringExtra("workoutTargetTime");
-//
-//        start_time.setText(pStart);
-//        target_time.setText(pTarget);
-
-
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 updateData();
-                Intent intent = new Intent(WorkoutUpdate.this, WorkoutCaloriesActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(WorkoutUpdate.this, WorkoutCaloriesActivity.class);
+//                startActivity(intent);
 
             }
         });
@@ -65,16 +58,44 @@ public class WorkoutUpdate extends AppCompatActivity {
                 if(snapshot.hasChild("Workout")){
                     Workout workoutobj = new Workout();
                     workoutobj.setWorkoutStartTimeH(start_time.getHour());
-                    workoutobj.setWorkoutStartTimeM(target_time.getMinute());
+                    workoutobj.setWorkoutStartTimeM(start_time.getMinute());
                     workoutobj.setWorkoutTargetTimeH(target_time.getHour());
                     workoutobj.setWorkoutTargetTimeM(target_time.getMinute());
 
-                    dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
-                    dbRef.setValue(workoutobj);
-                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+                    if (start_time.getHour() == target_time.getHour()) {
+                        if (start_time.getMinute() >= target_time.getMinute()) {
+                            Toast.makeText(getApplicationContext(), "Start Time Minutes Be Less Than End Time Minutes", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
+                            dbRef.setValue(workoutobj);
+                            Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(WorkoutUpdate.this, WorkoutCaloriesActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                    else if(start_time.getMinute() == target_time.getMinute()){
+                        if (start_time.getHour() >= target_time.getHour()) {
+                            Toast.makeText(getApplicationContext(), "Start Time Hours Should Be Less Than End Time Hours", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
+                            dbRef.setValue(workoutobj);
+                            Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(WorkoutUpdate.this, WorkoutCaloriesActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                    else {
+                        dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
+                        dbRef.setValue(workoutobj);
+                        Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(WorkoutUpdate.this, WorkoutCaloriesActivity.class);
+                        startActivity(intent);
+                    }
                 }
                 else
-                    Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No Source to Update", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -84,9 +105,4 @@ public class WorkoutUpdate extends AppCompatActivity {
         });
 
     }
-
-//    public void clearControls(){
-//        start_time.setText("");
-//        target_time.setText("");
-//    }
 }
