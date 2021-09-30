@@ -4,43 +4,45 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Workout {
-    private String workoutDay;
-    private String workoutStartTime;
-    private String workoutTargetTime;
-    private String workoutEndingTime;
+//    private String workoutDay;
+    private int workoutStartTimeH;
+    private int workoutStartTimeM;
+    private int workoutTargetTimeH;
+    private int workoutTargetTimeM;
+//    private int workoutEndingTime;
 
     public Workout() {
     }
 
-    public String getWorkoutDay() {
-        return workoutDay;
+    public int getWorkoutStartTimeH() {
+        return workoutStartTimeH;
     }
 
-    public void setWorkoutDay(String workoutDay) {
-        this.workoutDay = workoutDay;
+    public void setWorkoutStartTimeH(int workoutStartTimeH) {
+        this.workoutStartTimeH = workoutStartTimeH;
     }
 
-    public String getWorkoutStartTime() {
-        return workoutStartTime;
+    public int getWorkoutStartTimeM() {
+        return workoutStartTimeM;
     }
 
-    public void setWorkoutStartTime(String workoutStartTime) {
-        this.workoutStartTime = workoutStartTime;
+    public void setWorkoutStartTimeM(int workoutStartTimeM) {
+        this.workoutStartTimeM = workoutStartTimeM;
     }
 
-    public String getWorkoutTargetTime() {
-        return workoutTargetTime;
+    public int getWorkoutTargetTimeH() {
+        return workoutTargetTimeH;
     }
 
-    public void setWorkoutTargetTime(String workoutTargetTime) {
-        this.workoutTargetTime = workoutTargetTime;
+    public void setWorkoutTargetTimeH(int workoutTargetTimeH) {
+        this.workoutTargetTimeH = workoutTargetTimeH;
     }
 
-    public String getWorkoutEndingTime() {
-        return workoutEndingTime;
+    public int getWorkoutTargetTimeM() {
+        return workoutTargetTimeM;
     }
 
-    public void setWorkoutEndingTime(String workoutEndingTime) {
-        this.workoutEndingTime = workoutEndingTime;
+    public void setWorkoutTargetTimeM(int workoutTargetTimeM) {
+        this.workoutTargetTimeM = workoutTargetTimeM;
     }
 }

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,21 +20,19 @@ import com.google.firebase.database.ValueEventListener;
 
 public class WorkoutCaloriesActivity extends AppCompatActivity {
 
-    TextView date, start_time, target_time;
-    EditText ending_time;
+    TextView start_timeH, target_timeH, start_timeM, target_timeM;
     Button btn_cal, btn_update, btn_delete;
     DatabaseReference dbRef;
-    double calory = 20.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_calories);
 
-        date = (TextView) findViewById(R.id.date);
-        start_time = (TextView) findViewById(R.id.start_time_view);
-        target_time = (TextView) findViewById(R.id.target_time_view);
-        ending_time = findViewById(R.id.ending_time);
+        start_timeH = findViewById(R.id.start_time_viewH);
+        start_timeM = findViewById(R.id.start_time_viewM);
+        target_timeH = findViewById(R.id.target_time_viewH);
+        target_timeM = findViewById(R.id.target_time_viewM);
 
         btn_cal = findViewById(R.id.btn_burnt_calories);
         btn_update = findViewById(R.id.btn_update_workout);
@@ -43,17 +40,14 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
 
         dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
 
-        dbRef.addValueEventListener(new ValueEventListener() {
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
-                    String d = snapshot.child("workoutDay").getValue().toString();
-                    String s = snapshot.child("workoutStartTime").getValue().toString();
-                    String t = snapshot.child("workoutTargetTime").getValue().toString();
-
-                    date.setText(d);
-                    start_time.setText(s);
-                    target_time.setText(t);
+                    start_timeH.setText(snapshot.child("workoutStartTimeH").getValue().toString());
+                    start_timeM.setText(snapshot.child("workoutStartTimeM").getValue().toString());
+                    target_timeH.setText(snapshot.child("workoutTargetTimeH").getValue().toString());
+                    target_timeM.setText(snapshot.child("workoutTargetTimeM").getValue().toString());
 
                 } else
                     Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
@@ -64,6 +58,7 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
 
             }
         });
+
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,9 +74,10 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutUpdate.class);
-                intent.putExtra("workoutDay", date.getText().toString());
-                intent.putExtra("workoutStartTime", start_time.getText().toString());
-                intent.putExtra("workoutTargetTime", target_time.getText().toString());
+                intent.putExtra("workoutStartTimeH", start_timeH.getText().toString());
+                intent.putExtra("workoutStartTimeM",start_timeM.getText().toString());
+                intent.putExtra("workoutTargetTimeH", target_timeH.getText().toString());
+                intent.putExtra("workoutTargetTimeM",target_timeM.getText().toString());
                 startActivity(intent);
 
             }
@@ -90,8 +86,8 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createDate();
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
+                //calculateCalories();
                 startActivity(intent);
 
             }
@@ -99,26 +95,6 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
 
 
     }
-    public void clearControls(){
-        ending_time.setText("");
-    }
-
-    public void createDate(){
-        dbRef = FirebaseDB.getFirebaseDatabaseRef();
-
-        if (TextUtils.isEmpty(date.getText().toString()))
-            Toast.makeText(getApplicationContext(),"Please enter a time", Toast.LENGTH_SHORT).show();
-        else{
-            Workout workoutobj = new Workout();
-            workoutobj.setWorkoutEndingTime(ending_time.getText().toString().trim());
-
-            dbRef.child("Workout").setValue(workoutobj);
-
-            Toast.makeText(getApplicationContext(), "Ending time inserted successfully", Toast.LENGTH_SHORT).show();
-            clearControls();
-        }
-    }
-
     public void deleteWorkout(){
         dbRef = FirebaseDB.getFirebaseDatabaseRef();
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -137,15 +113,16 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+//                caloryCalculate();
             }
         });
 
     }
-//
-//    public double cararyCalculate(){
-//        double val = 0;
-//        val = calory*(ending_time-start_time);
-//        return val;
-//    }
+
+    public double caloryCalculate(double calory, int target_time, int start_time){
+        double val = 0;
+        val = calory*(double)(target_time-start_time);
+        return val;
+    }
 }
 
