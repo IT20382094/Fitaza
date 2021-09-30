@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitazafitnessapp.db.FirebaseDB;
+import com.example.fitazafitnessapp.model.Workout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +22,8 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
     TextView start_timeH, target_timeH, start_timeM, target_timeM;
     Button btn_cal, btn_update, btn_delete;
     DatabaseReference dbRef;
+    private double burntCalories;
+    private Workout workoutObj = new Workout();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +89,9 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
 
-//                caloryCalculate(calory, );
+                createData();
+//                caloryCalculate(calory);
+
                 startActivity(intent);
 
             }
@@ -117,8 +122,8 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
 
     }
 
-    public double caloryCalculate(double calory, int a, int b){
-        int start_time, target_time;
+    public double caloryCalculate(double calory){
+        int start_time, target_time,a,b;
         double val = 0;
         a = Integer.parseInt(start_timeH.getText().toString());
         b = Integer.parseInt(target_timeH.getText().toString());
@@ -126,6 +131,29 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         target_time=(b * 60) + Integer.parseInt(target_timeM.getText().toString());
         val = calory*(double)(target_time-start_time);
         return val;
+    }
+
+    public void createData(){
+        burntCalories = caloryCalculate(40);
+        dbRef = FirebaseDB.getFirebaseDatabaseRef();
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild("Workout")) {
+                    Workout w1 = new Workout();
+                    w1.setCalories(burntCalories);
+                    dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
+                    dbRef.setValue(w1);
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "No Source to Update", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
 
