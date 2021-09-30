@@ -1,15 +1,11 @@
 package com.example.fitazafitnessapp.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 public class Workout {
-//    private String workoutDay;
     private int workoutStartTimeH;
     private int workoutStartTimeM;
     private int workoutTargetTimeH;
     private int workoutTargetTimeM;
-//    private int workoutEndingTime;
+    private double calories;
 
     public Workout() {
     }
@@ -44,5 +40,13 @@ public class Workout {
 
     public void setWorkoutTargetTimeM(int workoutTargetTimeM) {
         this.workoutTargetTimeM = workoutTargetTimeM;
+    }
+
+    public double getCalories() {
+        return calories;
+    }
+
+    public void setCalories(double calories) {
+        this.calories = calories;
     }
 }

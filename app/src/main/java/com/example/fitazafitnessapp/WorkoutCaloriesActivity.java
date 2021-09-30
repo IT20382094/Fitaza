@@ -5,14 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitazafitnessapp.db.FirebaseDB;
-import com.example.fitazafitnessapp.model.Workout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -87,7 +85,8 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
-                //calculateCalories();
+
+//                caloryCalculate(calory, );
                 startActivity(intent);
 
             }
@@ -113,14 +112,18 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-//                caloryCalculate();
             }
         });
 
     }
 
-    public double caloryCalculate(double calory, int target_time, int start_time){
+    public double caloryCalculate(double calory, int a, int b){
+        int start_time, target_time;
         double val = 0;
+        a = Integer.parseInt(start_timeH.getText().toString());
+        b = Integer.parseInt(target_timeH.getText().toString());
+        start_time = (a * 60) + Integer.parseInt(start_timeM.getText().toString());
+        target_time=(b * 60) + Integer.parseInt(target_timeM.getText().toString());
         val = calory*(double)(target_time-start_time);
         return val;
     }
