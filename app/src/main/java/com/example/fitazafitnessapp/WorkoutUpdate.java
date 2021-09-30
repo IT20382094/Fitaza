@@ -43,9 +43,6 @@ public class WorkoutUpdate extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 updateData();
-//                Intent intent = new Intent(WorkoutUpdate.this, WorkoutCaloriesActivity.class);
-//                startActivity(intent);
-
             }
         });
     }
