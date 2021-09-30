@@ -14,4 +14,15 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+
+
+//    @Test
+//    public void testBmiCalculation(){
+//        double result = YourBMIActivity.calculateBmi(54.00, 156.00);
+//        assertEquals(22.19, result);
+//    }
+
+
+
 }

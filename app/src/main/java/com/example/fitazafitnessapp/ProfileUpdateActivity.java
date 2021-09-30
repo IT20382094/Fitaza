@@ -83,7 +83,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
 
                     dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
                     dbProfile.setValue(myProfile);
-                    Toast.makeText(getApplicationContext(), "Data updated Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Profile updated Successfully", Toast.LENGTH_SHORT).show();
 
                 } else
                     Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
