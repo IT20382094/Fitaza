@@ -85,12 +85,13 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/expected"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:hint="8 glasses"
-                android:textSize="20dp"
                 android:textColor="@color/black"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -103,12 +104,13 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/achieved"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:hint="6 glasses"
-                android:textSize="20dp"
                 android:textColor="@color/black"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -121,15 +123,17 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/water_clac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:hint="2 glasses"
-                android:textSize="20dp"
                 android:textColor="@color/black"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <Button
+                android:id="@+id/done"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

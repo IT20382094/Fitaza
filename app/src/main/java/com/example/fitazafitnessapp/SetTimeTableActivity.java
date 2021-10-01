@@ -103,7 +103,6 @@ public class SetTimeTableActivity extends AppCompatActivity {
             }
         });
 
-
         time1 = findViewById(R.id.time1);
         time2 = findViewById(R.id.time2);
 
@@ -122,12 +121,6 @@ public class SetTimeTableActivity extends AppCompatActivity {
         });
     }
 
-//    public void clearControls() {
-//
-////        time1.setText("");
-////        time2.setText("");
-//    }
-
     public void createData() {
         dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Timetable");
         String id = dbRef.push().getKey();
@@ -136,31 +129,10 @@ public class SetTimeTableActivity extends AppCompatActivity {
         timetableObj.setTime2H(time2.getHour());
         timetableObj.setTime2M(time2.getMinute());
 
-//        if (TextUtils.isEmpty(time1.getText().toString()))
-//            Toast.makeText(getApplicationContext(), "Please enter a time", Toast.LENGTH_SHORT).show();
-//        else if (TextUtils.isEmpty(time2.getText().toString()))
-//            Toast.makeText(getApplicationContext(), "Please enter a time", Toast.LENGTH_SHORT).show();
-//        else {
-//
-//            Timetable timetableobj = new Timetable();
-//            timetableobj.setTime1(time1.getText().toString().trim());
-//            timetableobj.setTime2(time2.getText().toString().trim());
-//
         dbRef.child(id).setValue(timetableObj);
-//
-//            //feedback to user via a toast message
-//            Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
-//            clearControls();
-//        }
-    }
 
-//        btnSet = findViewById(R.id.btn_set_back);
-//        btnSet.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(SetTimeTableActivity.this, ViewTimeTableActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        Toast.makeText(getApplicationContext(), "Timetable inserted successfully", Toast.LENGTH_SHORT).show();
+
+    }
 
 }
