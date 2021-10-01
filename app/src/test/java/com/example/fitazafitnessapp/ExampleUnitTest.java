@@ -14,4 +14,10 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+//    @Test
+//    public void testWaterCalculation(){
+//        int result = SetWaterTargetActivity.waterCalc(8, 6);
+//        assertEquals(2, result);
+//    }
 }
