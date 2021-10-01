@@ -87,7 +87,7 @@ public class MealPlanCalculatorActivity extends AppCompatActivity {
     }
 
 
-    public double bMRCalculation(double weight, double height, String gender, int age) {
+    public static double bMRCalculation(double weight, double height, String gender, int age) {
         if (gender.equals("Female")) {
             BMR = 10 * weight + 6.25 * height - 5 * age - 161;
             return BMR;
