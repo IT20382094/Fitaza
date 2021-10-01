@@ -63,13 +63,14 @@ public class YourBMIActivity extends AppCompatActivity {
         btn_bmi_value.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double bmi_value = calculateBmi(pWt, pHt);
+                double value = calculateBmi(pWt, pHt);
+                bmi_value.setText(String.format("%.2f", value));
 
-                if (bmi_value < 18.5) {
+                if (value < 18.5) {
                     result = "Underweight";
-                } else if (bmi_value >= 18.5 && bmi_value <= 25) {
+                } else if (value >= 18.5 && value <= 25) {
                     result = "Normal weight";
-                } else if (bmi_value >= 25 && bmi_value <= 30) {
+                } else if (value >= 25 && value <= 30) {
                     result = "Overweight";
                 } else {
                     result = "Obese";
@@ -80,9 +81,9 @@ public class YourBMIActivity extends AppCompatActivity {
         });
     }
 
-    public double calculateBmi(Double weight, Double height) {
+    public static double calculateBmi(Double weight, Double height) {
         double ans = (weight * 10000) / (height * height);
-       bmi_value.setText(String.format("%.2f", ans));
+//       bmi_value.setText(String.format("%.2f", ans));
         return ans;
     }
 }
