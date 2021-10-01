@@ -159,7 +159,7 @@ public class MyProfileActivity extends AppCompatActivity {
         weight.setText("");
         height.setText("");
     }
-    
+
 
 }
 
