@@ -6,6 +6,7 @@ public class MealPlan {
 
     private String mealPlanId;
     private String mealPlanName;
+    private List<String> mealsList;
 
     public MealPlan() {
     }
@@ -29,6 +30,14 @@ public class MealPlan {
 
     public void setMealPlanName(String mealPlanName) {
         this.mealPlanName = mealPlanName;
+    }
+
+    public List<String> getMealsList() {
+        return mealsList;
+    }
+
+    public void setMealsList(List<String> mealsList) {
+        this.mealsList = mealsList;
     }
 
     //    List<String> calPlan1200Breakfast;

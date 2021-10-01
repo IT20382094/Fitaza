@@ -15,6 +15,23 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
+//    @Test
+//    public void testBMR(){
+//        double result = MealPlanCalculatorActivity.bMRCalculation(45.4, 151.1, "Female", 24);
+//        assertEquals(1117, result,0);
+//    }
+//
+//    @Test
+//    public void testBmiCalculation(){
+//        double result = YourBMIActivity.calculateBmi(54.00, 156.00);
+//        assertEquals(22.19, result, 0);
+//    }
+//
+//    @Test
+//    public void testCalorieCalculation(){
+//        double result = WorkoutCaloriesActivity.caloryCalculate(100, 10.00,9.30);
+//        assertEquals(50, result, 0);
+//    }
 
 //    @Test
 //    public void testWaterCalculation(){
@@ -30,7 +47,5 @@ public class ExampleUnitTest {
 //        assertEquals(22.19, result);
 //    }
 
-
-
-
+    
 }

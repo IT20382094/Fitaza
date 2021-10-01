@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:calendarTextColor="@color/black"
 
                 />
 
@@ -55,6 +56,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/breakfastMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
@@ -66,26 +68,29 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/bMenu1TV1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="All grain cereal (125)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
             <TextView
+                android:id="@+id/bMenu1TV3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="Milk (50)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
             <TextView
+                android:id="@+id/bMenu1TV2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="Banana (90)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
@@ -129,6 +134,104 @@
 
         </LinearLayout>
 
+<!--        <LinearLayout-->
+<!--            android:id="@+id/lyBreakfastMenu2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:background="@drawable/input_border"-->
+<!--            android:orientation="vertical"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:paddingBottom="10dp"-->
+<!--                android:text="Breakfast"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="28dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:paddingBottom="10dp"-->
+<!--                android:text="Menu 2"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="21dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:text="All grain cereal (125)"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:text="Milk (50)"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:text="Banana (90)"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:paddingBottom="10dp"-->
+<!--                android:text="Snack"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="21dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:text="Cucumber (30)"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:text="Avocado dip (50)"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:paddingBottom="10dp"-->
+<!--                android:text="Total : 345 Calories"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="21dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
         <LinearLayout
             android:id="@+id/lyLunchMenu1"
             android:layout_width="match_parent"
@@ -153,21 +256,23 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/lunchMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:text="Menu 2"
+                android:text="Menu 1"
                 android:textColor="@color/black"
                 android:textSize="21dp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/lMenu1TV1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="Chicken and vegetable soup (300)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
@@ -175,7 +280,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="Bread (100)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
@@ -243,6 +348,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/dinnerMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
@@ -254,10 +360,11 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/dMenu1TV1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="All grain cereal (125)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
@@ -265,7 +372,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="Grilled Chicken (200)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
@@ -274,7 +381,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:paddingLeft="10dp"
-                android:text="Brussel Sprouts (100)"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 

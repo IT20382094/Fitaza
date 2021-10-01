@@ -63,6 +63,7 @@
             android:paddingBottom="8dp"
             android:textAlignment="textEnd"
             android:textSize="16dp"
+            android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
@@ -99,6 +100,7 @@
             android:paddingBottom="8dp"
             android:textAlignment="textEnd"
             android:textSize="16dp"
+            android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
 
 
@@ -160,6 +162,7 @@
             android:paddingBottom="8dp"
             android:textAlignment="textEnd"
             android:textSize="16dp"
+            android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
@@ -196,6 +199,7 @@
             android:paddingBottom="8dp"
             android:textAlignment="textEnd"
             android:textSize="16dp"
+            android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
