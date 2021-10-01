@@ -25,8 +25,12 @@ public class MealPlanActivity extends AppCompatActivity {
     CheckBox breakfastChk1, breakfastChk2, breakfastChk3, lunchChk1, lunchChk2, lunchChk3, dinnerChk1, dinnerChk2, dinnerChk3;
     DatabaseReference dbRef;
     MealPlan mealPlan;
+    CheckBox mealPlan1200Breakfast, mealPlan1300Breakfast, mealPlan1500Breakfast, mealPlan1200Lunch, mealPlan1300Lunch, mealPlan1500Lunch, mealPlan1200Dinner, mealPlan1300Dinner, mealPlan1500Dinner;
+
 
     private Button btnMealPlan;
+    private Button btnMealPlanBack;
+    private Button gotoMealPlanBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,21 +55,34 @@ public class MealPlanActivity extends AppCompatActivity {
         btnMealPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onCheckboxClicked();
+                addListenerOnButtonClick();
+               // onCheckboxClicked();
                 Intent intent = new Intent(MealPlanActivity.this, MealDailyPlanActivity.class);
                 startActivity(intent);
             }
         });
 
-        btnMealPlan = findViewById(R.id.btn_meal_plan_back);
-        btnMealPlan.setOnClickListener(new View.OnClickListener() {
+        btnMealPlanBack = findViewById(R.id.btn_meal_plan_back);
+        btnMealPlanBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MealPlanActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
         });
+
+
+        gotoMealPlanBack = findViewById(R.id.btn_meal_plan_view);
+        gotoMealPlanBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MealPlanActivity.this, MealDailyPlanActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
     public void onCheckboxClicked() {
         dbRef = FirebaseDB.getFirebaseDatabaseRef().child("mealPlan");
@@ -97,6 +114,128 @@ public class MealPlanActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, "Data saved Successfully", Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    public void  addListenerOnButtonClick(){
+//        mealPlan1200Breakfast = (CheckBox)findViewById(R.id.breakfast_check1);
+//        mealPlan1200Lunch = (CheckBox)findViewById(R.id.lunch_check1);
+//        btnMealPlan = (Button)findViewById(R.id.btn_add_daily_plan);
+        dbRef = FirebaseDB.getFirebaseDatabaseRef().child("mealPlan");
+
+
+        String id = dbRef.push().getKey();
+
+        MealPlan breakfastMenu1 = new MealPlan(id, "BreakfastMenu1");
+        MealPlan lunchMenu1 = new MealPlan(id,"LunchMenu1");
+        MealPlan dinnerMenu1 =new MealPlan(id,"DinnerMenu1");
+
+        MealPlan breakfastMenu2 = new MealPlan(id, "BreakfastMenu2");
+        MealPlan lunchMenu2 = new MealPlan(id,"LunchMenu2");
+        MealPlan dinnerMenu2 = new MealPlan(id,"DinnerMenu2");
+
+        MealPlan breakfastMenu3 = new MealPlan(id, "BreakfastMenu3");
+        MealPlan lunchMenu3 = new MealPlan(id,"LunchMenu3");
+        MealPlan dinnerMenu3 = new MealPlan(id,"DinnerMenu3");
+
+        List<String> breakfast1200Menu1 = new ArrayList<>();
+        List<String> lunch1200Menu1 = new ArrayList<>();
+        List<String> dinner1200Menu1 = new ArrayList<>();
+
+        List<String> breakfast1500Menu2 = new ArrayList<>();
+        List<String> lunch1500Menu2 = new ArrayList<>();
+        List<String> dinner1500Menu2 = new ArrayList<>();
+
+        List<String> breakfast2000Menu3 = new ArrayList<>();
+        List<String> lunch2000Menu3 = new ArrayList<>();
+        List<String> dinner2000Menu3 = new ArrayList<>();
+
+        if(breakfastChk1.isChecked()) {
+            breakfast1200Menu1.add("aaaaaa");
+            breakfast1200Menu1.add("All-bran cereal (125)");
+            breakfast1200Menu1.add("Milk (50)");
+            breakfast1200Menu1.add("Cucumber (30)");
+            breakfast1200Menu1.add("Avocado dip (50)");
+            breakfastMenu1.setMealsList(breakfast1200Menu1);
+
+            dbRef.push().setValue(breakfastMenu1);
+        }
+        if (lunchChk1.isChecked()){
+            lunch1200Menu1.add("bbbbbbbbbbbb");
+            lunch1200Menu1.add("Grilled cheese with tomato (300)");
+            lunch1200Menu1.add("Salad (50)");
+            lunch1200Menu1.add("Walnuts (100)");
+            lunchMenu1.setMealsList(lunch1200Menu1);
+
+            dbRef.push().setValue(lunchMenu1);
+        }
+
+        if (dinnerChk1.isChecked()){
+            dinner1200Menu1.add("ccccccc");
+            dinner1200Menu1.add("Grilled cheese with tomato (300)");
+            dinner1200Menu1.add("Salad (50)");
+            dinner1200Menu1.add("Walnuts (100)");
+            dinnerMenu1.setMealsList(dinner1200Menu1);
+
+            dbRef.push().setValue(dinnerMenu1);
+        }
+//-----------------------------------------------------------------------------------------
+        if(breakfastChk2.isChecked()) {
+            breakfast1500Menu2.add("ddddddddddddd");
+            breakfast1500Menu2.add("Granola (120)");
+            breakfast1500Menu2.add("Greek yogurt (120)");
+            breakfast1500Menu2.add("Blueberries (40)");
+            breakfastMenu2.setMealsList(breakfast1500Menu2);
+
+            dbRef.push().setValue(breakfastMenu2);
+        }
+        if (lunchChk2.isChecked()){
+            lunch1500Menu2.add("eeeeeeeeeeeeee");
+            lunch1500Menu2.add("Chicken and vegetable soup (300)");
+            lunch1500Menu2.add("Bread (100)");
+            lunchMenu2.setMealsList(lunch1500Menu2);
+
+            dbRef.push().setValue(lunchMenu2);
+        }
+        if (dinnerChk2.isChecked()){
+            dinner1500Menu2.add("ffffffffff");
+            dinner1500Menu2.add("Steak (375)");
+            dinner1500Menu2.add("Mashed potatoes (150)");
+            dinner1500Menu2.add("Asparagus (75)");
+            dinnerMenu2.setMealsList(dinner1500Menu2);
+
+            dbRef.push().setValue(dinnerMenu2);
+        }
+        //-----------------------------------------------------------------------------------------
+        if(breakfastChk3.isChecked()) {
+            breakfast2000Menu3.add("ggggggggggggg");
+            breakfast2000Menu3.add("All-bran cereal (125)");
+            breakfast2000Menu3.add("Milk (50)");
+            breakfast2000Menu3.add("Cucumber (30)");
+            breakfastMenu3.setMealsList(breakfast2000Menu3);
+
+            dbRef.push().setValue(breakfastMenu3);
+        }
+
+        if (lunchChk3.isChecked()){
+            lunch2000Menu3.add("hhhhhhhhhhhhhh");
+            lunch2000Menu3.add("Grilled cheese with tomato (300)");
+            lunch2000Menu3.add("Salad (50)");
+            lunch2000Menu3.add("Walnuts (100)");
+            lunchMenu3.setMealsList(lunch2000Menu3);
+
+            dbRef.push().setValue(lunchMenu3);
+        }
+        if (dinnerChk3.isChecked()){
+            dinner2000Menu3.add("iiiiiiiiiiiiii");
+            dinner2000Menu3.add("Grilled Chicken (200)");
+            dinner2000Menu3.add("Brussel sprouts (100)");
+            dinner2000Menu3.add("Quinoa (105)");
+            dinnerMenu3.setMealsList(dinner2000Menu3);
+
+            dbRef.push().setValue(dinnerMenu3);
+        }
 
     }
 }

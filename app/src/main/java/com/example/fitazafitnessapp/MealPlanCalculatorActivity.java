@@ -61,16 +61,6 @@ public class MealPlanCalculatorActivity extends AppCompatActivity {
         });
 
 
-        btnCalculate = findViewById(R.id.btn_calculate);
-        btnCalculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bMRCalculation(Double.parseDouble(weight.getText().toString()), Double.parseDouble(height.getText().toString()), gender.getText().toString(), Integer.parseInt(age.getText().toString()));
-                Intent intent = new Intent(MealPlanCalculatorActivity.this, MealPlanResultActivity.class);
-                startActivity(intent);
-            }
-        });
-
         btnBack = findViewById(R.id.btn_calculate_back);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,8 +70,22 @@ public class MealPlanCalculatorActivity extends AppCompatActivity {
             }
         });
 
+        btnCalculate = findViewById(R.id.btn_calculate);
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bMRCalculation(Double.parseDouble(weight.getText().toString()),
+                        Double.parseDouble(height.getText().toString()),
+                        gender.getText().toString(),
+                        Integer.parseInt(age.getText().toString()));
+
+                Intent intent = new Intent(MealPlanCalculatorActivity.this, MealPlanResultActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
+
 
     public double bMRCalculation(double weight, double height, String gender, int age) {
         if (gender.equals("Female")) {
