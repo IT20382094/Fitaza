@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,6 +22,8 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
     TextView start_timeH, target_timeH, start_timeM, target_timeM;
     Button btn_cal, btn_update, btn_delete;
     DatabaseReference dbRef;
+    private double burntCalories;
+    private Workout workoutObj = new Workout();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +76,9 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutUpdate.class);
                 intent.putExtra("workoutStartTimeH", start_timeH.getText().toString());
-                intent.putExtra("workoutStartTimeM",start_timeM.getText().toString());
+                intent.putExtra("workoutStartTimeM", start_timeM.getText().toString());
                 intent.putExtra("workoutTargetTimeH", target_timeH.getText().toString());
-                intent.putExtra("workoutTargetTimeM",target_timeM.getText().toString());
+                intent.putExtra("workoutTargetTimeM", target_timeM.getText().toString());
                 startActivity(intent);
 
             }
@@ -86,25 +87,24 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
-                startActivity(intent);
+                createData();
 
             }
         });
 
 
     }
-    public void deleteWorkout(){
+
+    public void deleteWorkout() {
         dbRef = FirebaseDB.getFirebaseDatabaseRef();
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChild("Workout")){
+                if (snapshot.hasChild("Workout")) {
                     dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
                     dbRef.removeValue();
                     Toast.makeText(getApplicationContext(), "Data deleted Successfully", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(getApplicationContext(), "No source to delete", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -116,11 +116,41 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         });
 
     }
-//
-//    public double cararyCalculate(){
-//        double val = 0;
-//        val = calory*(ending_time-start_time);
-//        return val;
-//    }
+
+    public double caloryCalculate(double calory) {
+        int start_time, target_time, a, b;
+        double val = 0;
+        a = Integer.parseInt(start_timeH.getText().toString());
+        b = Integer.parseInt(target_timeH.getText().toString());
+        start_time = (a * 60) + Integer.parseInt(start_timeM.getText().toString());
+        target_time = (b * 60) + Integer.parseInt(target_timeM.getText().toString());
+        val = calory * (double) (target_time - start_time);
+        return val;
+    }
+
+    public void createData() {
+        burntCalories = caloryCalculate(WorkoutFocusActivity.belly_cal);
+        dbRef = FirebaseDB.getFirebaseDatabaseRef();
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild("Workout")) {
+                    Workout w1 = snapshot.child("Workout").getValue(Workout.class);
+                    w1.setCalories(burntCalories);
+                    dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
+                    dbRef.setValue(w1);
+                    Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
+//                intent.putExtra("burntCalories", burntCalories);
+                    startActivity(intent);
+                } else
+                    Toast.makeText(getApplicationContext(), "No Source to Calculate", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }
 

@@ -27,7 +27,6 @@ public class WorkoutStepsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_steps);
 
-//        date = findViewById(R.id.workout_date);
         start_time = findViewById(R.id.workout_start_time);
         target_time = findViewById(R.id.workout_end_time);
 
@@ -40,8 +39,8 @@ public class WorkoutStepsActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 createData();
-                Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutCaloriesActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutCaloriesActivity.class);
+//                startActivity(intent);
             }
         });
 
@@ -55,43 +54,44 @@ public class WorkoutStepsActivity extends AppCompatActivity {
         });
     }
 
-//    public void clearControls(){
-//
-//        date.setText("");
-//        start_time.setText("");
-//        target_time.setText("");
-//    }
 
     public void createData(){
+
         dbRef = FirebaseDB.getFirebaseDatabaseRef();
 
-//        String id = dbRef.push().getKey();
         workoutObj.setWorkoutStartTimeH(start_time.getHour());
         workoutObj.setWorkoutStartTimeM(start_time.getMinute());
         workoutObj.setWorkoutTargetTimeH(target_time.getHour());
         workoutObj.setWorkoutTargetTimeM(target_time.getMinute());
 
-        dbRef.child("Workout").setValue(workoutObj);
-
-//        if (TextUtils.isEmpty(date.getText().toString()))
-//            Toast.makeText(getApplicationContext(),"Please enter a date", Toast.LENGTH_SHORT).show();
-//        else if (TextUtils.isEmpty(start_time.getText().toString()))
-//            Toast.makeText(getApplicationContext(),"Please enter a starting time", Toast.LENGTH_SHORT).show();
-//        else if (TextUtils.isEmpty(target_time.getText().toString()))
-//            Toast.makeText(getApplicationContext(),"Please enter a target time", Toast.LENGTH_SHORT).show();
-//
-//        else{
-//
-//            Workout workoutobj = new Workout();
-//            workoutobj.setWorkoutDay(date.getText().toString().trim());
-//            workoutobj.setWorkoutStartTime(start_time.getText().toString().trim());
-//            workoutobj.setWorkoutTargetTime(target_time.getText().toString().trim());
-//
-//            dbRef.child("Workout").setValue(workoutobj);
-//            //feedback to user via a toast message
-//            Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
-//            clearControls();
-//        }
+        if (start_time.getHour() == target_time.getHour()) {
+            if (start_time.getMinute() >= target_time.getMinute()) {
+                Toast.makeText(getApplicationContext(), "Start Time Minutes Be Less Than End Time Minutes", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                dbRef.child("Workout").setValue(workoutObj);
+                Toast.makeText(getApplicationContext(), "Workout inserted successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutCaloriesActivity.class);
+                startActivity(intent);
+            }
+        }
+        else if(start_time.getMinute() == target_time.getMinute()){
+            if (start_time.getHour() >= target_time.getHour()) {
+                Toast.makeText(getApplicationContext(), "Start Time Hours Should Be Less Than End Time Hours", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                dbRef.child("Workout").setValue(workoutObj);
+                Toast.makeText(getApplicationContext(), "Workout inserted successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutCaloriesActivity.class);
+                startActivity(intent);
+            }
+        }
+        else {
+            dbRef.child("Workout").setValue(workoutObj);
+            Toast.makeText(getApplicationContext(), "Workout inserted successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(WorkoutStepsActivity.this, WorkoutCaloriesActivity.class);
+            startActivity(intent);
+        }
     }
 }
 
