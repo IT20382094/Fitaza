@@ -11,6 +11,7 @@ public class WorkoutFocusActivity extends AppCompatActivity {
 
     private static String exerciseType;
     private Button btnBelly, btnButt;
+    static double belly_cal;
 
 
     @Override
@@ -22,12 +23,10 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnBelly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double belly_cal = 11.4;
+                belly_cal = 11.4;
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_belly_steps.class);
                 intent.putExtra("belly_cal",belly_cal);
                 startActivity(intent);
-//                11.4calories per minute
-
             }
         });
 
@@ -35,9 +34,9 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                belly_cal = 9.4;
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_butt_steps.class);
                 startActivity(intent);
-//                9.4
             }
         });
 
@@ -45,9 +44,9 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                belly_cal = 3;
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_chest_steps.class);
                 startActivity(intent);
-//                3
             }
         });
 
@@ -55,9 +54,9 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                belly_cal = 7.3;
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_legs_steps.class);
                 startActivity(intent);
-//                7.3
             }
         });
 
@@ -65,9 +64,9 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                belly_cal = 11.2;
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_shoulder_steps.class);
                 startActivity(intent);
-//                11.2
             }
         });
     }

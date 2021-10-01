@@ -76,9 +76,9 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutUpdate.class);
                 intent.putExtra("workoutStartTimeH", start_timeH.getText().toString());
-                intent.putExtra("workoutStartTimeM",start_timeM.getText().toString());
+                intent.putExtra("workoutStartTimeM", start_timeM.getText().toString());
                 intent.putExtra("workoutTargetTimeH", target_timeH.getText().toString());
-                intent.putExtra("workoutTargetTimeM",target_timeM.getText().toString());
+                intent.putExtra("workoutTargetTimeM", target_timeM.getText().toString());
                 startActivity(intent);
 
             }
@@ -88,26 +88,23 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 createData();
-                Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
-//                intent.putExtra("burntCalories", burntCalories);
-                startActivity(intent);
 
             }
         });
 
 
     }
-    public void deleteWorkout(){
+
+    public void deleteWorkout() {
         dbRef = FirebaseDB.getFirebaseDatabaseRef();
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChild("Workout")){
+                if (snapshot.hasChild("Workout")) {
                     dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
                     dbRef.removeValue();
                     Toast.makeText(getApplicationContext(), "Data deleted Successfully", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(getApplicationContext(), "No source to delete", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -120,30 +117,32 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
 
     }
 
-    public double caloryCalculate(double calory){
-        int start_time, target_time,a,b;
+    public double caloryCalculate(double calory) {
+        int start_time, target_time, a, b;
         double val = 0;
         a = Integer.parseInt(start_timeH.getText().toString());
         b = Integer.parseInt(target_timeH.getText().toString());
         start_time = (a * 60) + Integer.parseInt(start_timeM.getText().toString());
-        target_time=(b * 60) + Integer.parseInt(target_timeM.getText().toString());
-        val = calory*(double)(target_time-start_time);
+        target_time = (b * 60) + Integer.parseInt(target_timeM.getText().toString());
+        val = calory * (double) (target_time - start_time);
         return val;
     }
 
-    public void createData(){
-        burntCalories = caloryCalculate(40);
+    public void createData() {
+        burntCalories = caloryCalculate(WorkoutFocusActivity.belly_cal);
         dbRef = FirebaseDB.getFirebaseDatabaseRef();
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChild("Workout")) {
-                    Workout w1 = new Workout();
+                    Workout w1 = snapshot.child("Workout").getValue(Workout.class);
                     w1.setCalories(burntCalories);
                     dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Workout");
                     dbRef.setValue(w1);
-                }
-                else
+                    Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
+//                intent.putExtra("burntCalories", burntCalories);
+                    startActivity(intent);
+                } else
                     Toast.makeText(getApplicationContext(), "No Source to Calculate", Toast.LENGTH_SHORT).show();
             }
 

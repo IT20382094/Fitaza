@@ -57,8 +57,6 @@ public class WorkoutStepsActivity extends AppCompatActivity {
 
     public void createData(){
 
-    public void createData() {
-
         dbRef = FirebaseDB.getFirebaseDatabaseRef();
 
         workoutObj.setWorkoutStartTimeH(start_time.getHour());
