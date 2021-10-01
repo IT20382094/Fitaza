@@ -42,7 +42,7 @@ public class SetWaterTargetActivity extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                clac.setText(waterCalc(Integer.parseInt(expected.getText().toString()), Integer.parseInt(achieved.getText().toString())) + "");
 //                int value=waterCalc(ach,ex);
 //                    clac.setText(value);
 //                waterCalc(Integer.parseInt(expected.getText().toString()), Integer.parseInt(achieved.getText().toString()));
@@ -53,7 +53,7 @@ public class SetWaterTargetActivity extends AppCompatActivity {
 
     }
 
-    public static int waterCalc(int num1, int num2){
+    public static int waterCalc(int num1, int num2) {
 
         int waterCalc;
         waterCalc = num1 - num2;
