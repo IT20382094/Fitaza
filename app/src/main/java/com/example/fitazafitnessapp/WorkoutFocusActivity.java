@@ -12,6 +12,7 @@ public class WorkoutFocusActivity extends AppCompatActivity {
     private static String exerciseType;
     private Button btnBelly, btnButt;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +22,12 @@ public class WorkoutFocusActivity extends AppCompatActivity {
         btnBelly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                double belly_cal = 11.4;
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_belly_steps.class);
+                intent.putExtra("belly_cal",belly_cal);
                 startActivity(intent);
+//                11.4calories per minute
+
             }
         });
 
@@ -32,6 +37,7 @@ public class WorkoutFocusActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_butt_steps.class);
                 startActivity(intent);
+//                9.4
             }
         });
 
@@ -41,6 +47,7 @@ public class WorkoutFocusActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_chest_steps.class);
                 startActivity(intent);
+//                3
             }
         });
 
@@ -50,6 +57,7 @@ public class WorkoutFocusActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_legs_steps.class);
                 startActivity(intent);
+//                7.3
             }
         });
 
@@ -59,6 +67,7 @@ public class WorkoutFocusActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(WorkoutFocusActivity.this, activity_shoulder_steps.class);
                 startActivity(intent);
+//                11.2
             }
         });
     }

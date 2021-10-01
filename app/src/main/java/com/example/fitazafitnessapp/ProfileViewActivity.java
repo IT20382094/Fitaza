@@ -119,7 +119,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                 if (snapshot.hasChild("Profile")) {
                     dbProfile = FirebaseDB.getFirebaseDatabaseRef().child("Profile");
                     dbProfile.removeValue();
-                    Toast.makeText(getApplicationContext(), "Data deleted Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Profile deleted Successfully", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "No source to delete", Toast.LENGTH_SHORT).show();
                 }
