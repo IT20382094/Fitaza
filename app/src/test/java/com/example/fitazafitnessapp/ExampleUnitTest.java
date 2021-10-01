@@ -15,9 +15,22 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
+
 //    @Test
 //    public void testWaterCalculation(){
 //        int result = SetWaterTargetActivity.waterCalc(8, 6);
 //        assertEquals(2, result);
 //    }
+
+
+
+//    @Test
+//    public void testBmiCalculation(){
+//        double result = YourBMIActivity.calculateBmi(54.00, 156.00);
+//        assertEquals(22.19, result);
+//    }
+
+
+
+
 }
