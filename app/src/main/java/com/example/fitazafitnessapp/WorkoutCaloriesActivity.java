@@ -87,11 +87,9 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
         btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
-
                 createData();
-//                caloryCalculate(calory);
-
+                Intent intent = new Intent(WorkoutCaloriesActivity.this, WorkoutBurntActivity.class);
+//                intent.putExtra("burntCalories", burntCalories);
                 startActivity(intent);
 
             }
@@ -146,7 +144,7 @@ public class WorkoutCaloriesActivity extends AppCompatActivity {
                     dbRef.setValue(w1);
                 }
                 else
-                    Toast.makeText(getApplicationContext(), "No Source to Update", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No Source to Calculate", Toast.LENGTH_SHORT).show();
             }
 
             @Override
