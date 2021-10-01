@@ -2,6 +2,7 @@ package com.example.fitazafitnessapp.model;
 
 public class Timetable {
 
+    private String id;
     private String day;
     private String exercise1;
     private int time1H;
@@ -76,5 +77,13 @@ public class Timetable {
 
     public void setTime2(String time2) {
         this.time2 = time2;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

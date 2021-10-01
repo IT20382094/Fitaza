@@ -92,6 +92,7 @@
                 android:hint="8 glasses"
                 android:textColor="@color/black"
                 android:textSize="20dp"
+                android:inputType="number"
                 android:textStyle="bold" />
 
             <TextView
@@ -109,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:hint="6 glasses"
+                android:inputType="number"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />

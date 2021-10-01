@@ -124,6 +124,7 @@ public class SetTimeTableActivity extends AppCompatActivity {
     public void createData() {
         dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Timetable");
         String id = dbRef.push().getKey();
+        timetableObj.setId(id);
         timetableObj.setTime1H(time1.getHour());
         timetableObj.setTime1M(time1.getMinute());
         timetableObj.setTime2H(time2.getHour());

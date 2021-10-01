@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,7 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitazafitnessapp.R;
 import com.example.fitazafitnessapp.ViewTimeTableActivity;
+import com.example.fitazafitnessapp.db.FirebaseDB;
 import com.example.fitazafitnessapp.model.Timetable;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -40,6 +46,29 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.Time
         String time2 = LocalTime.of(timetable.getTime1H(), timetable.getTime1M()).format(DateTimeFormatter.ofPattern("hh:mm a"));
         holder.txtTime1.setText(time1);
         holder.txtTime2.setText(time2);
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteTimeTable(timetable);
+            }
+        });
+    }
+
+    private void deleteTimeTable(Timetable timetable) {
+        DatabaseReference dbRef = FirebaseDB.getFirebaseDatabaseRef().child("Timetable");
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(timetable.getId())) {
+                    dbRef.child(timetable.getId()).removeValue();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override
@@ -75,6 +104,7 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.Time
     public class TimeTableViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtDay, txtExercise1, txtTime1, txtExercise2, txtTime2;
+        Button btnDelete;
 
         public TimeTableViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -83,6 +113,7 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.Time
             txtTime1 = itemView.findViewById(R.id.txtTime1);
             txtExercise2 = itemView.findViewById(R.id.txtExercise2);
             txtTime2 = itemView.findViewById(R.id.txtTime2);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
         }
 
     }
