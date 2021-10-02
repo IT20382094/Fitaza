@@ -21,7 +21,6 @@ public class YourBMIActivity extends AppCompatActivity {
     private String pWeight, pHeight, result;
     private Double pWt, pHt;
 
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +82,6 @@ public class YourBMIActivity extends AppCompatActivity {
 
     public static double calculateBmi(Double weight, Double height) {
         double ans = (weight * 10000) / (height * height);
-//       bmi_value.setText(String.format("%.2f", ans));
         return ans;
     }
 }

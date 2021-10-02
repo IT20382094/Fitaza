@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please enter username and password", Toast.LENGTH_LONG).show();
         }
     }
-
+    
     private void chkLogin() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
