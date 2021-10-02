@@ -152,17 +152,15 @@ public class MealPlanActivity extends AppCompatActivity {
         List<String> dinner2000Menu3 = new ArrayList<>();
 
         if(breakfastChk1.isChecked()) {
-            breakfast1200Menu1.add("aaaaaa");
+
             breakfast1200Menu1.add("All-bran cereal (125)");
             breakfast1200Menu1.add("Milk (50)");
-            breakfast1200Menu1.add("Cucumber (30)");
-            breakfast1200Menu1.add("Avocado dip (50)");
+            breakfast1200Menu1.add("Banana (90)");
             breakfastMenu1.setMealsList(breakfast1200Menu1);
 
             dbRef.push().setValue(breakfastMenu1);
         }
         if (lunchChk1.isChecked()){
-            lunch1200Menu1.add("bbbbbbbbbbbb");
             lunch1200Menu1.add("Grilled cheese with tomato (300)");
             lunch1200Menu1.add("Salad (50)");
             lunch1200Menu1.add("Walnuts (100)");
@@ -172,17 +170,15 @@ public class MealPlanActivity extends AppCompatActivity {
         }
 
         if (dinnerChk1.isChecked()){
-            dinner1200Menu1.add("ccccccc");
-            dinner1200Menu1.add("Grilled cheese with tomato (300)");
-            dinner1200Menu1.add("Salad (50)");
-            dinner1200Menu1.add("Walnuts (100)");
+            dinner1200Menu1.add("Grilled Chicken (200)");
+            dinner1200Menu1.add("Brussel sprouts (100)");
+            dinner1200Menu1.add("Quinoa (105)");
             dinnerMenu1.setMealsList(dinner1200Menu1);
 
             dbRef.push().setValue(dinnerMenu1);
         }
 //-----------------------------------------------------------------------------------------
         if(breakfastChk2.isChecked()) {
-            breakfast1500Menu2.add("ddddddddddddd");
             breakfast1500Menu2.add("Granola (120)");
             breakfast1500Menu2.add("Greek yogurt (120)");
             breakfast1500Menu2.add("Blueberries (40)");
@@ -191,7 +187,6 @@ public class MealPlanActivity extends AppCompatActivity {
             dbRef.push().setValue(breakfastMenu2);
         }
         if (lunchChk2.isChecked()){
-            lunch1500Menu2.add("eeeeeeeeeeeeee");
             lunch1500Menu2.add("Chicken and vegetable soup (300)");
             lunch1500Menu2.add("Bread (100)");
             lunchMenu2.setMealsList(lunch1500Menu2);
@@ -199,7 +194,6 @@ public class MealPlanActivity extends AppCompatActivity {
             dbRef.push().setValue(lunchMenu2);
         }
         if (dinnerChk2.isChecked()){
-            dinner1500Menu2.add("ffffffffff");
             dinner1500Menu2.add("Steak (375)");
             dinner1500Menu2.add("Mashed potatoes (150)");
             dinner1500Menu2.add("Asparagus (75)");
@@ -209,29 +203,28 @@ public class MealPlanActivity extends AppCompatActivity {
         }
         //-----------------------------------------------------------------------------------------
         if(breakfastChk3.isChecked()) {
-            breakfast2000Menu3.add("ggggggggggggg");
-            breakfast2000Menu3.add("All-bran cereal (125)");
-            breakfast2000Menu3.add("Milk (50)");
-            breakfast2000Menu3.add("Cucumber (30)");
+            breakfast2000Menu3.add("Buttered toast (150)");
+            breakfast2000Menu3.add("Egg (80)");
+            breakfast2000Menu3.add("Banana (90)");
+            breakfast2000Menu3.add("Almonds (170)");
             breakfastMenu3.setMealsList(breakfast2000Menu3);
 
             dbRef.push().setValue(breakfastMenu3);
         }
 
         if (lunchChk3.isChecked()){
-            lunch2000Menu3.add("hhhhhhhhhhhhhh");
-            lunch2000Menu3.add("Grilled cheese with tomato (300)");
-            lunch2000Menu3.add("Salad (50)");
-            lunch2000Menu3.add("Walnuts (100)");
+            lunch2000Menu3.add("Grilled chicken (225)");
+            lunch2000Menu3.add("Grilled vegetables (125)");
+            lunch2000Menu3.add("Pasta (185)");
             lunchMenu3.setMealsList(lunch2000Menu3);
 
             dbRef.push().setValue(lunchMenu3);
         }
         if (dinnerChk3.isChecked()){
-            dinner2000Menu3.add("iiiiiiiiiiiiii");
-            dinner2000Menu3.add("Grilled Chicken (200)");
-            dinner2000Menu3.add("Brussel sprouts (100)");
-            dinner2000Menu3.add("Quinoa (105)");
+            dinner2000Menu3.add("Grilled salmon (225)");
+            dinner2000Menu3.add("Brown rice (175)");
+            dinner2000Menu3.add("Green beans (100)");
+            dinner2000Menu3.add("Walnuts (165)");
             dinnerMenu3.setMealsList(dinner2000Menu3);
 
             dbRef.push().setValue(dinnerMenu3);
